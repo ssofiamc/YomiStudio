@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const isGitHubPages = process.env.GITHUB_ACTIONS === "true";
-const repositoryName = "Web-Yomi-Studio";
+const repositoryName = "YomiStudio";
 
 const nextConfig: NextConfig = {
   output: "export",
