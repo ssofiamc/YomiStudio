@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Geist";
+  src: url("./fonts/GeistVF.woff") format("woff");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("./fonts/GeistMonoVF.woff") format("woff");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --font-geist: "Geist", Inter, "Helvetica Neue", Arial, sans-serif;
+  --font-geist-mono: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+  --yomi-ink: #111111;
+  --yomi-paper: #ffffff;
+  --yomi-line: #e7e7e7;
+  color: var(--yomi-ink);
+  background: var(--yomi-paper);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+body {
+  min-width: 320px;
+  margin: 0;
+  background: var(--yomi-paper);
+  color: var(--yomi-ink);
+  font-family: var(--font-geist);
+  line-height: 1.6;
+}
+button, input, textarea, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { text-decoration-thickness: 1px; text-underline-offset: .2em; }
+button, a, input, textarea, select {
+  transition-property: color, background-color, border-color, box-shadow, transform;
+  transition-duration: 180ms;
+  transition-timing-function: ease;
+}
+:focus-visible { outline: 3px solid #111111; outline-offset: 3px; }
+::selection { background: #111111; color: #ffffff; }
+
+/* Navegación principal */
+.sticky.top-0 {
+  background: rgba(255, 255, 255, .94) !important;
+  border-bottom: 1px solid var(--yomi-line) !important;
+  box-shadow: 0 6px 26px rgba(0, 0, 0, .045);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+.sticky.top-0 > div { min-height: 82px; }
+.sticky.top-0 nav a { color: #333333; text-decoration-color: transparent; }
+.sticky.top-0 nav a:hover { color: #000000; text-decoration-color: currentColor; }
+.yomi-logo { line-height: 0; flex: 0 0 auto; }
+.yomi-logo__image {
+  display: block;
+  width: clamp(132px, 12vw, 174px);
+  height: auto;
+  object-fit: contain;
+  image-rendering: auto;
+}
+footer .yomi-logo__image { filter: invert(1); }
+
+/* Portada YOMI: fondo luminoso, tipografía contrastada y composición editorial */
+main > section:first-child {
+  background-color: #ffffff;
+  color: #111111;
+  border-bottom: 1px solid #dedede;
+}
+main > section:first-child h1,
+#estudio h2,
+#cacciatori h2,
+#catalogo h2,
+#equipo h2,
+#contacto h2 { font-family: var(--font-geist); font-weight: 750; }
+main > section:first-child .max-w-sm {
+  border-width: 1px;
+  border-color: #d9d9d9;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .95);
+  box-shadow: 0 18px 52px rgba(0, 0, 0, .09);
+  padding: clamp(20px, 3vw, 28px);
+}
+
+#estudio {
+  background: #ffffff !important;
+  color: #111111 !important;
+  border-bottom: 1px solid #e8e8e8 !important;
+}
+#estudio .text-zinc-400 { color: #666666 !important; }
+#estudio .text-zinc-200,
+#estudio .text-zinc-300 { color: #414141 !important; }
+#estudio h2 { max-width: 680px; line-height: .94 !important; letter-spacing: -.065em !important; }
+#estudio .text-lg { max-width: 620px; font-size: clamp(1.05rem, 1.45vw, 1.22rem); }
+#estudio .border-2 { border-radius: 12px; overflow: hidden; }
+#estudio .border-t-2 { border-top-width: 1px; }
+
+/* Universo Cacciatori: negro profundo, rojo editorial y una entrada protagonista */
+#cacciatori {
+  background: #080809 !important;
+  color: #f7f5f4 !important;
+  border-bottom: 1px solid #282326 !important;
+}
+#cacciatori .text-xs { letter-spacing: .18em; }
+#cacciatori h2 { color: #ffffff; line-height: .92 !important; }
+#cacciatori h2::after {
+  content: "";
+  display: block;
+  width: 74px;
+  height: 4px;
+  margin-top: 19px;
+  background: #d91f32;
+}
+#cacciatori .max-w-2xl > p:last-child { max-width: 620px; color: #b9b5b6; font-size: 1rem; line-height: 1.85; }
+#cacciatori .mx-auto > .relative {
+  border-color: #262327 !important;
+  border-radius: 28px !important;
+  background: #171619 !important;
+  box-shadow: 14px 14px 0 #bc1c2b !important;
+}
+#cacciatori .aspect-video { border-color: #050505 !important; border-radius: 13px; }
+#cacciatori .aspect-video a { border-color: #393236; }
+#cacciatori .aspect-video strong { font-weight: 800; letter-spacing: -.065em; }
+#cacciatori .aspect-video a:hover strong { color: #ff4b59 !important; }
+#cacciatori .mt-8.text-center a {
+  border: 1px solid #d9273a;
+  border-radius: 5px;
+  background: #cf1d30;
+  padding: 15px 22px;
+  box-shadow: 0 8px 25px rgba(207, 29, 48, .18);
+}
+#cacciatori .mt-8.text-center a:hover { background: #f03347; transform: translateY(-2px); }
+
+/* Catálogo y equipo con tarjetas limpias y bordes sutiles */
+#catalogo {
+  background: #f7f7f7 !important;
+  color: #111111 !important;
+  border-bottom: 1px solid #e6e6e6 !important;
+}
+#catalogo article > div {
+  border-color: #e5e5e5 !important;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, .055);
+}
+#catalogo button, #catalogo a { text-underline-offset: 4px; }
+#catalogo .border-b-2 { border-bottom-width: 1px; }
+#equipo {
+  background: #ffffff;
+  color: #111111;
+  border-bottom: 1px solid #e9e9e9 !important;
+}
+#equipo article {
+  overflow: hidden;
+  border-width: 1px;
+  border-color: #dedede;
+  border-radius: 12px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, .055);
+}
+#equipo article:hover { transform: translateY(-3px); box-shadow: 0 20px 46px rgba(0, 0, 0, .09); }
+#equipo article > div:first-child { border-right-width: 1px; border-color: #dedede; }
+#contacto { background: #090909 !important; }
+#contacto h2 { letter-spacing: -.065em !important; line-height: .94 !important; }
+
+/* Estados, controles y respeto por movimiento reducido */
+button:hover, a:hover { transition-duration: 180ms; }
+@media (max-width: 640px) {
+  .sticky.top-0 > div { min-height: 72px; }
+  .yomi-logo__image { width: 126px; }
+  main > section:first-child h1 { font-size: clamp(3.4rem, 14vw, 5.8rem); }
+  #estudio h2, #cacciatori h2, #catalogo h2, #equipo h2, #contacto h2 { line-height: .96 !important; }
+  #cacciatori .mx-auto > .relative { border-width: 9px; border-radius: 18px !important; box-shadow: 7px 7px 0 #bc1c2b !important; }
+  #equipo article { grid-template-columns: .65fr 1.35fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
