@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { StoreProvider } from "@/components/store/StoreProvider";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export const metadata: Metadata = {
   title: "Yomi Studio",
   description: "Historias que se pueden tocar, leer, jugar y recorrer.",
   icons: {
-    icon: [{ url: "public/icon.svg", type: "image/svg+xml" }],
-    shortcut: ["public/icon.svg"],
+    icon: [{ url: `${basePath}/yomi-studio-blanco.png`, type: "image/png" }],
+    shortcut: [`${basePath}/yomi-studio-blanco.png`],
   },
 };
 
