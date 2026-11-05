@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   title: "Yomi Studio",
   description: "Historias que se pueden tocar, leer, jugar y recorrer.",
   icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
-    shortcut: ["/icon.svg"],
+    icon: [{ url: "public/icon.svg", type: "image/svg+xml" }],
+    shortcut: ["public/icon.svg"],
   },
 };
 
