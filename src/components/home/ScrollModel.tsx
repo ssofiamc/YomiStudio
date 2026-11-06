@@ -18,7 +18,7 @@ function Model({ reducedMotion }: { reducedMotion: boolean }) {
   });
 
   return (
-    <group ref={ref} position={[1.15, 0.05, 0]} scale={1.15}>
+    <group ref={ref} position={[1.15, 0.45, 0]} scale={1.15}>
       <primitive object={scene} />
     </group>
   );
@@ -43,10 +43,6 @@ export function ScrollModel() {
         <ambientLight intensity={1.4} />
         <directionalLight castShadow position={[3, 4, 3]} intensity={2.2} />
         <Model reducedMotion={reducedMotion} />
-        <mesh position={[0, -1.05, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
-          <circleGeometry args={[1.4, 48]} />
-          <meshStandardMaterial color="#111" transparent opacity={0.12} />
-        </mesh>
       </Canvas>
     </div>
   );
