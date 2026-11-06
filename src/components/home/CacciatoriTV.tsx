@@ -12,7 +12,7 @@ export function CacciatoriTV() {
         <div className="aspect-video overflow-hidden border-8 border-black bg-black p-3">
           <Link href="/cacciatori" aria-label="Entrar al universo Cacciatori" className="group grid h-full w-full place-items-center border border-zinc-700 bg-[repeating-linear-gradient(0deg,#111_0,#111_2px,#181818_2px,#181818_4px)] text-center text-white transition-colors hover:bg-zinc-900">
             <span>
-              <span className="block text-xs font-bold uppercase tracking-[.28em] text-zinc-400">Archivo independiente / 01</span>
+              <span className="block text-xs font-bold uppercase tracking-[.28em] text-zinc-400">Conoce</span>
               <strong className="mt-2 block font-sans text-5xl uppercase tracking-[-.08em] transition-colors group-hover:text-yellow-300 sm:text-7xl">Cacciatori</strong>
               <span className="mt-4 block text-xs uppercase tracking-[.18em] text-zinc-300">Entrar al universo ↗</span>
             </span>
