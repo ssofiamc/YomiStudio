@@ -30,7 +30,7 @@ function Model({ view }: { view: View }) {
   });
 
   return (
-    <group ref={ref} position={[0, -0.75, 0]} scale={1.15}>
+    <group ref={ref} position={[0, -0.25, 0]} scale={1.15}>
       <primitive object={scene} />
     </group>
   );
