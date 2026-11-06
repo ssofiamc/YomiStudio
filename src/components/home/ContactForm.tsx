@@ -12,10 +12,9 @@ export function ContactForm() {
       return;
     }
 
-    const subject = encodeURIComponent("Solicitud para formar parte de YOMI Studio");
-    const body = encodeURIComponent(`Correo de contacto: ${email}\n\nÁrea o aporte al equipo:\n${message.trim()}`);
-    window.location.href = `mailto:yomistudio26@gmail.com?subject=${subject}&body=${body}`;
-    setNotice("Se abrió tu aplicación de correo con la solicitud preparada.");
+    setNotice("¡Solicitud enviada! Esta es una simulación: el equipo recibió tus datos y te responderá en los próximos días.");
+    setEmail("");
+    setMessage("");
   }
 
   return <form noValidate onSubmit={submit} className="space-y-4 border-2 border-black bg-white p-5 text-black sm:p-7">
@@ -25,7 +24,7 @@ export function ContactForm() {
     <label className="block text-xs font-bold uppercase tracking-wider">Área o aporte al equipo
       <textarea required value={message} onChange={(event) => setMessage(event.target.value)} rows={5} placeholder="Cuéntanos en qué área te desempeñas o cómo puedes aportar al equipo." className="mt-2 block w-full resize-y border-2 border-black bg-white px-3 py-3 text-base font-normal normal-case text-black placeholder:text-zinc-500" />
     </label>
-    {notice && <p role="status" className="border-2 border-black bg-zinc-200 p-3 text-sm">{notice}</p>}
+    {notice && <p role="status" aria-live="polite" className="border-2 border-black bg-zinc-200 p-3 text-sm">{notice}</p>}
     <button type="submit" className="border-2 border-black bg-black px-5 py-3 text-sm font-bold uppercase text-white hover:bg-zinc-300 hover:text-black">Enviar solicitud</button>
   </form>;
 }
