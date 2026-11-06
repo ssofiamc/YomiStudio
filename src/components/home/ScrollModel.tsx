@@ -18,7 +18,7 @@ function Model({ reducedMotion }: { reducedMotion: boolean }) {
   });
 
   return (
-    <group ref={ref} position={[1.15, 0.45, 0]} scale={1.15}>
+    <group ref={ref} position={[0.8, -0.25, 0]} scale={1.15}>
       <primitive object={scene} />
     </group>
   );
@@ -39,7 +39,7 @@ export function ScrollModel() {
 
   return (
     <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[radial-gradient(circle_at_50%_35%,#ffffff_0,transparent_32%),linear-gradient(135deg,#f5f5f5_20%,#a3a3a3_100%)]">
-      <Canvas camera={{ position: [1.25, 0.5, 3.1], fov: 42 }} dpr={[1, 1.5]} gl={{ antialias: true, powerPreference: "high-performance" }} shadows>
+      <Canvas camera={{ position: [0, 0.2, 4], fov: 42 }} dpr={[1, 1.5]} gl={{ antialias: true, powerPreference: "high-performance" }} shadows>
         <ambientLight intensity={1.4} />
         <directionalLight castShadow position={[3, 4, 3]} intensity={2.2} />
         <Model reducedMotion={reducedMotion} />

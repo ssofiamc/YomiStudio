@@ -10,8 +10,8 @@ const modelPath = `${basePath}/Munieco.glb`;
 
 type View = "frontal" | "lado" | "tres-cuartos";
 const rotations: Record<View, number> = {
-  frontal: 0,
-  lado: Math.PI / 2,
+  frontal: Math.PI / 2,
+  lado: 0,
   "tres-cuartos": Math.PI / 4,
 };
 
