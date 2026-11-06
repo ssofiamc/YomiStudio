@@ -26,11 +26,11 @@ const team = [
 export default function Page() {
   return <><section className="relative border-b-2 border-black md:min-h-[90vh]">
     <div className="h-auto overflow-visible md:sticky md:top-20 md:h-[calc(90vh-5rem)] md:overflow-hidden">
-    <div className="z-10 mx-auto flex h-auto max-w-6xl flex-col justify-start gap-2 px-5 py-5 md:h-full md:justify-between md:gap-0 md:px-8 md:py-12">
+    <div className="z-10 mx-auto flex h-auto max-w-6xl flex-col justify-start gap-5 px-5 py-5 md:h-full md:justify-between md:gap-0 md:px-8 md:py-12">
       <ScrollModel />
       <div className="relative z-10 order-2 max-w-xl md:order-none"><p className="mb-3 text-xs font-bold uppercase tracking-[.22em]">YOMI Studio / 2026</p>
       <h1 className="font-sans text-6xl uppercase leading-[.78] tracking-[-.07em] sm:text-8xl">Historias<br />que muerden.</h1></div>
-      <div className="relative z-10 ml-auto max-w-sm border-2 border-black bg-zinc-100 p-5"><p className="text-sm leading-relaxed">Animación, narrativa, diseño y experiencias multimedia únicas y de calidad.</p>
+      <div className="relative z-10 order-3 ml-auto mt-2 max-w-sm border-2 border-black bg-zinc-100 p-5 md:order-none md:mt-0"><p className="text-sm leading-relaxed">Animación, narrativa, diseño y experiencias multimedia únicas y de calidad.</p>
       <Link href="/catalogo" className="mt-4 inline-flex border-2 border-black bg-black px-4 py-3 text-sm font-bold uppercase text-white hover:bg-zinc-300 hover:text-black">Entrar al catálogo</Link></div></div></div>
       </section><section id="estudio" className="border-b-2 border-black bg-black px-5 py-16 text-white sm:px-8 sm:py-24">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-center"><CameraExperience /><div>
