@@ -19,7 +19,7 @@ function Model({ reducedMotion }: { reducedMotion: boolean }) {
   });
 
   return (
-    <group ref={ref} position={[0.8, -0.25, 0]} scale={1.15}>
+    <group ref={ref} position={[1.3, 0.35, 0]} scale={1.15}>
       <primitive object={model} />
     </group>
   );
