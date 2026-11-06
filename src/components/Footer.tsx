@@ -4,7 +4,7 @@ import { Logo } from "./Logo";
 
 const navigation = [{ href: "/", label: "Yomi Studio" }, { href: "/catalogo", label: "Catálogo" }, { href: "/cacciatori", label: "Cacciatori" }, { href: "/#equipo", label: "Equipo" }, { href: "/#contacto", label: "Contacto" }];
 const socialLinks = [
-  { label: "Instagram", href: "https://www.instagram.com/yomistudio26/" },
+  { label: "Instagram Yomi Studio", href: "https://www.instagram.com/yomistudio26/" },
   { label: "LinkedIn Santiago", href: "https://www.linkedin.com/in/david-santiago-amaya-reyes/" },
   { label: "LinkedIn Sara", href: "https://www.linkedin.com/in/sasomc/" },
 ];
