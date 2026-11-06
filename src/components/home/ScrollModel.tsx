@@ -48,7 +48,7 @@ export function ScrollModel() {
   }, []);
 
   return (
-    <div className="pointer-events-none relative z-0 order-2 h-40 w-full shrink-0 overflow-hidden bg-[radial-gradient(circle_at_50%_35%,#ffffff_0,transparent_32%),linear-gradient(135deg,#f5f5f5_20%,#a3a3a3_100%)] md:absolute md:inset-0 md:order-none md:h-auto md:w-auto">
+    <div className="pointer-events-none relative z-0 order-2 h-40 w-full shrink-0 overflow-hidden bg-[radial-gradient(circle_at_50%_35%,#ffffff_0,transparent_32%),linear-gradient(135deg,#f5f5f5_20%,#a3a3a3_100%)] md:absolute md:inset-0 md:order-none md:h-auto md:w-screen md:max-w-none">
       <Canvas camera={{ position: [0, 0.2, 4], fov: 42 }} dpr={[1, 1.5]} gl={{ antialias: true, powerPreference: "high-performance" }} shadows>
         <ambientLight intensity={1.4} />
         <directionalLight castShadow position={[3, 4, 3]} intensity={2.2} />
