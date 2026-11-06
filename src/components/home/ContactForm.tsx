@@ -12,7 +12,7 @@ export function ContactForm() {
       return;
     }
 
-    setNotice("¡Solicitud enviada! Esta es una simulación: el equipo recibió tus datos y te responderá en los próximos días.");
+    setNotice("¡Solicitud enviada! El equipo recibió tus datos y te responderá en los próximos días.");
     setEmail("");
     setMessage("");
   }

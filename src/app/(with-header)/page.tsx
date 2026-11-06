@@ -13,12 +13,14 @@ const team = [
     image: `${basePath}/Santiago%20Pic.jpeg`,
     role: "Director",
     description: "Estudiante de Ingeniería en Multimedia con habilidad en el dibujo",
+    behance: "https://www.behance.net/davidsamayar1",
   },
   {
     name: "Sara",
     image: `${basePath}/SaraPic.jpeg`,
     role: "Codirectora",
     description: "Estudiante de Ingeniería en Multimedia con habilidad en el diseño",
+    behance: "https://www.behance.net/sasomc",
   },
 ];
 export default function Page() {
@@ -48,12 +50,12 @@ export default function Page() {
               <section id="equipo" className="border-b-2 border-black px-5 py-16 sm:px-8 sm:py-24"><div className="mx-auto max-w-6xl">
                 <p className="text-xs font-bold uppercase tracking-[.22em]">Quiénes somos</p>
                 <h2 className="mt-3 font-sans text-5xl uppercase leading-[.8] tracking-[-.06em] sm:text-7xl">El equipo</h2>
-                <div className="mt-10 grid gap-5 md:grid-cols-2">{team.map((person) => <article key={person.name} className="grid min-h-72 grid-cols-[.8fr_1.2fr] border-2 border-black bg-white">
+                <div className="mt-10 grid gap-5 md:grid-cols-2">{team.map((person) => <a key={person.name} href={person.behance} target="_blank" rel="noreferrer" className="grid min-h-72 grid-cols-[.8fr_1.2fr] border-2 border-black bg-white text-black transition-transform hover:-translate-y-1">
                   <div className="relative overflow-hidden border-r-2 border-black bg-zinc-300">
                     <Image src={person.image} alt={`Foto de ${person.name}`} fill sizes="(max-width: 768px) 40vw, 25vw" className="object-cover" /></div>
                     <div className="flex flex-col p-5"><h3 className="font-sans text-3xl uppercase">{person.name}</h3> 
                     <p className="mt-4 text-xs font-bold uppercase tracking-[.14em] text-zinc-600">{person.role}</p>
-                    <p className="mt-auto text-sm leading-relaxed">{person.description}</p></div></article>)}</div></div></section>
+                    <p className="mt-auto text-sm leading-relaxed">{person.description}</p></div></a>)}</div></div></section>
                     <section id="contacto" className="bg-black px-5 py-16 text-white sm:px-8 sm:py-24"><div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[.85fr_1.15fr]"><div>
                       <p className="text-xs font-bold uppercase tracking-[.22em] text-zinc-400">Trabaja con nosotros</p>
                       <h2 className="mt-3 font-sans text-5xl uppercase leading-[.8] tracking-[-.06em] sm:text-7xl">¿Quieres ser parte de Yomi Studio?</h2>

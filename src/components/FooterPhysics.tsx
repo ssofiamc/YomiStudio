@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 type Body = { x: number; y: number; vx: number; vy: number; rotation: number; spin: number; width: number; height: number; label: string };
-const labels = ["YOMI", "CACCIATORI", "VACÍO", "01", "STUDIO", "✦"];
+const labels = ["YOMI", "STUDIO", "MULTIMEDIA", "UNIVERSO", "CACCIATORI", "✦"];
 /** Simulación ligera con colisiones AABB; no requiere Matter.js ni assets ajenos. */
 export function FooterPhysics({ className }: { className?: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
