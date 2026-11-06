@@ -2,7 +2,7 @@
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -11,6 +11,7 @@ const modelPath = `${basePath}/Munieco.glb`;
 function Model({ reducedMotion }: { reducedMotion: boolean }) {
   const ref = useRef<THREE.Group>(null);
   const { scene } = useGLTF(modelPath);
+  const model = useMemo(() => scene.clone(true), [scene]);
 
   useFrame((_, delta) => {
     if (!ref.current || reducedMotion) return;
@@ -19,7 +20,7 @@ function Model({ reducedMotion }: { reducedMotion: boolean }) {
 
   return (
     <group ref={ref} position={[0.8, -0.25, 0]} scale={1.15}>
-      <primitive object={scene} />
+      <primitive object={model} />
     </group>
   );
 }
