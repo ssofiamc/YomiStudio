@@ -24,9 +24,9 @@ const team = [
   },
 ];
 export default function Page() {
-  return <><section className="relative min-h-[90vh] border-b-2 border-black">
-    <div className="sticky top-20 h-[calc(90vh-5rem)] overflow-hidden">
-    <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col justify-start gap-5 px-5 py-8 sm:justify-between sm:gap-0 sm:px-8 sm:py-12">
+  return <><section className="relative border-b-2 border-black md:min-h-[90vh]">
+    <div className="h-auto overflow-visible md:sticky md:top-20 md:h-[calc(90vh-5rem)] md:overflow-hidden">
+    <div className="relative z-10 mx-auto flex h-auto max-w-6xl flex-col justify-start gap-2 px-5 py-5 sm:gap-0 sm:px-8 sm:py-12 md:h-full md:justify-between">
       <div className="relative z-10 max-w-xl"><p className="mb-3 text-xs font-bold uppercase tracking-[.22em]">YOMI Studio / 2026</p>
       <h1 className="font-sans text-6xl uppercase leading-[.78] tracking-[-.07em] sm:text-8xl">Historias<br />que muerden.</h1></div>
       <ScrollModel />

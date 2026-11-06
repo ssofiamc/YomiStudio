@@ -8,7 +8,7 @@ import * as THREE from "three";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const modelPath = `${basePath}/Munieco.glb`;
 
-function Model({ reducedMotion }: { reducedMotion: boolean }) {
+function Model({ reducedMotion, mobile }: { reducedMotion: boolean; mobile: boolean }) {
   const ref = useRef<THREE.Group>(null);
   const { scene } = useGLTF(modelPath);
   const model = useMemo(() => scene.clone(true), [scene]);
@@ -19,7 +19,7 @@ function Model({ reducedMotion }: { reducedMotion: boolean }) {
   });
 
   return (
-    <group ref={ref} position={[1.3, 0.35, 0]} scale={1.15}>
+    <group ref={ref} position={[mobile ? 0 : 1.3, 0.35, 0]} scale={1.15}>
       <primitive object={model} />
     </group>
   );
@@ -29,6 +29,7 @@ useGLTF.preload(modelPath);
 
 export function ScrollModel() {
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -38,12 +39,20 @@ export function ScrollModel() {
     return () => media.removeEventListener("change", update);
   }, []);
 
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 767px)");
+    const update = () => setMobile(media.matches);
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+
   return (
-    <div className="pointer-events-none relative z-0 order-2 h-52 w-full shrink-0 overflow-hidden bg-[radial-gradient(circle_at_50%_35%,#ffffff_0,transparent_32%),linear-gradient(135deg,#f5f5f5_20%,#a3a3a3_100%)] md:absolute md:inset-0 md:order-none md:h-auto md:w-auto">
+    <div className="pointer-events-none relative z-0 order-2 h-40 w-full shrink-0 overflow-hidden bg-[radial-gradient(circle_at_50%_35%,#ffffff_0,transparent_32%),linear-gradient(135deg,#f5f5f5_20%,#a3a3a3_100%)] md:absolute md:inset-0 md:order-none md:h-auto md:w-auto">
       <Canvas camera={{ position: [0, 0.2, 4], fov: 42 }} dpr={[1, 1.5]} gl={{ antialias: true, powerPreference: "high-performance" }} shadows>
         <ambientLight intensity={1.4} />
         <directionalLight castShadow position={[3, 4, 3]} intensity={2.2} />
-        <Model reducedMotion={reducedMotion} />
+        <Model reducedMotion={reducedMotion} mobile={mobile} />
       </Canvas>
     </div>
   );
