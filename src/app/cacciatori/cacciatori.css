@@ -127,6 +127,7 @@
 .cac-game-hero__content { padding: clamp(70px, 11vw, 150px) 0 90px; }
 .cac-game-hero__content .cac-h1 { margin: 18px 0 24px; }
 .cac-game-hero__claim { max-width: 560px; margin: 0 0 30px; color: #e8dfd3; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(17px, 2vw, 25px); font-style: italic; line-height: 1.5; }
+.cac-game-hero__actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .cac-game-intro, .cac-game-access { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, .9fr); gap: clamp(35px, 8vw, 150px); align-items: start; }
 .cac-body-copy { color: #9c958b; line-height: 1.9; }
 .cac-game-facts { margin: 32px 0 0; border-top: 1px solid var(--cac-line); }

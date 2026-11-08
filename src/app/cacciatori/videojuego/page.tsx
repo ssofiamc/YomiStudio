@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { publicAsset } from "@/components/cacciatori/assets";
 
 type InfoRow = { name: string; description: string };
 
@@ -44,27 +45,30 @@ function InfoTable({ rows }: { rows: InfoRow[] }) {
 }
 
 const characters = [
-  { image: "/ProtaVideojuego.png", name: "Brayan", role: "Protagonista", copy: "Un joven estudiante de criminalística que se infiltra en el restaurante abandonado para investigar lo que ocurrió allí. Su mirada forense es también su única forma de orientarse." },
-  { image: "/ChefVideojuego.png", name: "Cacciatori", role: "Antagonista principal", copy: "La presencia que domina el restaurante. Persigue a Brayan, altera su percepción y convierte cada pasillo en una amenaza." },
-  { image: "/CautivaVideojuego.png", name: "La Cautiva", role: "Antagonista secundaria", copy: "Otro de los personajes del videojuego. Su aparición añade una dimensión impredecible al recorrido y a la tensión de la historia." },
+  { image: publicAsset("ProtaVideojuego.png"), name: "Brayan", role: "Protagonista", copy: "Un joven estudiante de criminalística que se infiltra en el restaurante abandonado para investigar lo que ocurrió allí. Su mirada forense es también su única forma de orientarse." },
+  { image: publicAsset("ChefVideojuego.png"), name: "Cacciatori", role: "Antagonista principal", copy: "La presencia que domina el restaurante. Persigue a Brayan, altera su percepción y convierte cada pasillo en una amenaza." },
+  { image: publicAsset("CautivaVideojuego.png"), name: "La Cautiva", role: "Antagonista secundaria", copy: "Otro de los personajes del videojuego. Su aparición añade una dimensión impredecible al recorrido y a la tensión de la historia." },
 ];
 
 const scenarios = [
-  { image: "/CapRestaurante.png", name: "Restaurante Cacciatori", copy: "El escenario principal: un restaurante abandonado donde los vestigios de la antigua actividad culinaria conviven con señales de violencia y abandono." },
-  { image: "/CapSotano.png", name: "Sótano oculto", copy: "Un espacio escondido bajo el restaurante. Sus pasillos profundizan el misterio y obligan a Brayan a enfrentar lo que la superficie intenta ocultar." },
+  { image: publicAsset("CapRestaurante.png"), name: "Restaurante Cacciatori", copy: "El escenario principal: un restaurante abandonado donde los vestigios de la antigua actividad culinaria conviven con señales de violencia y abandono." },
+  { image: publicAsset("CapSotano.png"), name: "Sótano oculto", copy: "Un espacio escondido bajo el restaurante. Sus pasillos profundizan el misterio y obligan a Brayan a enfrentar lo que la superficie intenta ocultar." },
 ];
 
 export default function VideojuegoPage() {
   return (
     <>
       <section className="cac-game-hero">
-        <Image className="cac-game-hero__image" src="/CapVideojuego.png" alt="Pantalla de inicio del videojuego Cacciatori" fill priority sizes="100vw" />
+        <Image className="cac-game-hero__image" src={publicAsset("CapVideojuego.png")} alt="Pantalla de inicio del videojuego Cacciatori" fill priority sizes="100vw" />
         <div className="cac-game-hero__veil" />
         <div className="cac-container cac-game-hero__content">
           <p className="cac-eyebrow">01 / PRODUCTO PRINCIPAL DEL UNIVERSO</p>
           <h1 className="cac-h1">Videojuego<br />Cacciatori</h1>
           <p className="cac-game-hero__claim">La investigación comienza cuando el lugar deja de estar vacío.</p>
-          <a className="cac-button" href="#ficha">CONOCER EL JUEGO ↓</a>
+          <div className="cac-game-hero__actions">
+            <a className="cac-button" href="#ficha">CONOCER EL JUEGO ↓</a>
+            <a className="cac-button cac-button--light" href="https://youtu.be/tHJWUXCfLec" target="_blank" rel="noreferrer">VER TEASER ↗</a>
+          </div>
         </div>
       </section>
 
