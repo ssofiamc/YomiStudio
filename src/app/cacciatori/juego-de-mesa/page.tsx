@@ -43,7 +43,7 @@ export default function BoardGamePage() {
         </div>
       </section>
 
-      <section className="cac-section cac-section--dark">
+      <section className="cac-section cac-section--dark cac-game-data-section">
         <div className="cac-container cac-game-intro">
           <div>
             <p className="cac-eyebrow">03 / PROPÓSITO DEL DISEÑO</p>
