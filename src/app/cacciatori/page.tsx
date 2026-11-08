@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CacciatoriAction } from "@/components/cacciatori/CacciatoriAction";
 import { cacciatoriAsset } from "@/components/cacciatori/assets";
 
 const products = [
@@ -47,7 +46,6 @@ export default function CacciatoriPage() {
           <h1 id="cac-home-title" className="cac-hero__title">Cacciatori</h1>
           <p className="cac-hero__quote">El secreto del corte. Una historia entre la perfección de la culinaria italiana y la brutalidad humana.</p>
           <div className="cac-hero__bottom">
-            <CacciatoriAction label="Ver tráiler" variant="play" title="Tráiler de Cacciatori" image="hero-atmosphere.webp" description="Esta carpeta incluye las capturas del prototipo, pero no contiene el vídeo del tráiler. Cuando tengas el vídeo definitivo, podrá conectarse aquí sin cambiar el diseño." />
             <Link className="cac-button" href="#receta">CONOCER LA RECETA ↓</Link>
           </div>
         </div>

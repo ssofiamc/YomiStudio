@@ -26,7 +26,7 @@ export function CacciatoriShell({ children }: { children: ReactNode }) {
       </header>
       <main id="contenido-cacciatori" className="cac-main">{children}</main>
       <footer className="cac-footer">
-        <div className="cac-footer__brand"><Link href="/" className="cac-footer__wordmark">YOMI STUDIO</Link><p>Relatos que se sirven oscuros.</p></div>
+        <div className="cac-footer__brand"><Link href="/" className="cac-footer__wordmark">YOMI STUDIO</Link><p>Universo Cacciatori, el secreto del corte.</p></div>
         <div className="cac-footer__meta"><span>UNIVERSO CACCIATORI</span><Link href="/">VOLVER AL ESTUDIO ↗</Link></div>
         <a className="cac-back-top" href="#contenido-cacciatori" aria-label="Volver al inicio de la página">↑</a>
       </footer>

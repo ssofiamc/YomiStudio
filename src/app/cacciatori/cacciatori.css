@@ -83,7 +83,7 @@
 .cac-hero__micro { color: #81786d; font-family: 'Courier New', monospace; font-size: 9px; letter-spacing: .17em; text-transform: uppercase; }
 .cac-hero__corner { position: absolute; right: clamp(18px, 4vw, 58px); bottom: 26px; color: #847b70; font-family: 'Courier New', monospace; font-size: 9px; letter-spacing: .18em; text-align: right; text-transform: uppercase; }
 .cac-recipe { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr); gap: clamp(35px, 7vw, 110px); align-items: center; }
-.cac-recipe__wordmark { position: relative; color: rgba(255,255,255,.055); font-family: Georgia, 'Times New Roman', serif; font-size: clamp(55px, 12vw, 170px); letter-spacing: -.07em; line-height: .8; overflow-wrap: anywhere; }
+.cac-recipe__wordmark { position: relative; color: rgba(255,255,255,.055); font-family: Georgia, 'Times New Roman', serif; font-size: clamp(42px, 12vw, 170px); letter-spacing: -.08em; line-height: .8; white-space: nowrap; }
 .cac-recipe__panel { position: relative; border-left: 2px solid var(--cac-red); padding: 8px 0 8px 26px; }
 .cac-recipe__panel h3 { margin: 14px 0 17px; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(30px, 4vw, 52px); font-weight: 500; line-height: 1; text-transform: uppercase; }
 .cac-recipe__panel p { max-width: 510px; color: #aaa399; line-height: 1.8; }
@@ -267,7 +267,7 @@
   .cac-section-head { display: block; }
   .cac-section-note { margin-top: 18px; text-align: left; }
   .cac-recipe, .cac-evolution, .cac-plates, .cac-media-layout, .cac-process, .cac-access, .cac-comic-details, .cac-buy-panel, .cac-twine-layout { grid-template-columns: 1fr; }
-  .cac-recipe__wordmark { font-size: clamp(60px, 18vw, 115px); }
+  .cac-recipe__wordmark { font-size: clamp(42px, 14vw, 115px); }
   .cac-evolution__art, .cac-evolution__art img { min-height: 320px; }
   .cac-product-grid { grid-template-columns: 1fr; }
   .cac-product-card { display: grid; grid-template-columns: minmax(110px, .8fr) minmax(0,1.2fr); }
