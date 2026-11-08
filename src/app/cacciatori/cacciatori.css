@@ -140,6 +140,11 @@
 .cac-info-table h3 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(19px, 2vw, 27px); font-weight: 400; text-transform: uppercase; }
 .cac-info-table p { margin: 0; color: #9b9388; line-height: 1.7; }
 .cac-section--dark { background: #0b0909; }
+.cac-game-data-section { background: linear-gradient(135deg, #261012 0%, #35151a 52%, #241012 100%); }
+.cac-game-data-section .cac-info-table__row { border-color: rgba(235, 119, 124, .2); }
+.cac-game-data-section .cac-info-table__index,
+.cac-game-data-section .cac-eyebrow { color: #f08a8d; }
+.cac-game-data-section .cac-info-table p { color: #d3b8b5; }
 .cac-game-character-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .cac-game-authors .cac-credit-person { padding-top: 30px; }
 .cac-game-authors .cac-credit-person h3 { font-size: clamp(24px, 3vw, 36px); }

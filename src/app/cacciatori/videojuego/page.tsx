@@ -112,21 +112,21 @@ export default function VideojuegoPage() {
         </div>
       </section>
 
-      <section className="cac-section" id="mecanicas">
+      <section className="cac-section cac-game-data-section" id="mecanicas">
         <div className="cac-container">
           <div className="cac-section-head"><div><p className="cac-eyebrow">05 / SISTEMAS DE JUEGO</p><h2 className="cac-h2">Mecánicas</h2><p className="cac-intro">Las acciones concretas que permiten explorar, investigar y sobrevivir dentro del restaurante.</p></div><p className="cac-section-note">Acciones del jugador</p></div>
           <InfoTable rows={mechanics} />
         </div>
       </section>
 
-      <section className="cac-section cac-section--dark">
+      <section className="cac-section cac-game-data-section">
         <div className="cac-container">
           <div className="cac-section-head"><div><p className="cac-eyebrow">06 / EXPERIENCIA</p><h2 className="cac-h2">Dinámicas</h2><p className="cac-intro">Las decisiones y comportamientos que transforman las mecánicas en una experiencia de tensión y descubrimiento.</p></div><p className="cac-section-note">Decisiones · riesgo · escape</p></div>
           <InfoTable rows={dynamics} />
         </div>
       </section>
 
-      <section className="cac-section cac-section--dark">
+      <section className="cac-section cac-game-data-section">
         <div className="cac-container">
           <div className="cac-section-head"><div><p className="cac-eyebrow">07 / DIRECCIÓN EMOCIONAL</p><h2 className="cac-h2">Estéticas</h2><p className="cac-intro">Las decisiones visuales, sonoras y narrativas que definen cómo se siente jugar Cacciatori.</p></div><p className="cac-section-note">Atmósfera · significado</p></div>
           <InfoTable rows={aesthetics} />
