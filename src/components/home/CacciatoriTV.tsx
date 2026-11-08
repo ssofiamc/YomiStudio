@@ -10,11 +10,11 @@ export function CacciatoriTV() {
           <span className="h-16 w-4 rounded-full border-2 border-black bg-zinc-300" />
         </div>
         <div className="aspect-video overflow-hidden border-8 border-black bg-black p-3">
-          <Link href="/cacciatori" aria-label="Entrar al universo Cacciatori" className="group grid h-full w-full place-items-center border border-zinc-700 bg-[repeating-linear-gradient(0deg,#111_0,#111_2px,#181818_2px,#181818_4px)] text-center text-white transition-colors hover:bg-zinc-900">
+          <Link href="/cacciatori" aria-label="Entrar al universo Cacciatori" className="cacciatori-screen group relative grid h-full w-full place-items-center overflow-hidden border border-zinc-700 bg-[repeating-linear-gradient(0deg,#111_0,#111_2px,#181818_2px,#181818_4px)] text-center text-white transition-colors hover:bg-zinc-900 focus-visible:ring-4 focus-visible:ring-red-500">
             <span>
               <span className="block text-xs font-bold uppercase tracking-[.28em] text-zinc-400">Conoce</span>
               <strong className="mt-2 block font-sans text-5xl uppercase tracking-[-.08em] transition-colors group-hover:text-yellow-300 sm:text-7xl">Cacciatori</strong>
-              <span className="mt-4 block text-xs uppercase tracking-[.18em] text-zinc-300">Entrar al universo ↗</span>
+              <span className="cacciatori-screen__cta mt-4 block text-xs uppercase tracking-[.18em] text-zinc-300">Entrar al universo ↗</span>
             </span>
           </Link>
         </div>

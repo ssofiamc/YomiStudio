@@ -135,6 +135,58 @@ main > section:first-child .max-w-sm {
 #cacciatori .aspect-video a { border-color: #393236; }
 #cacciatori .aspect-video strong { font-weight: 800; letter-spacing: -.065em; }
 #cacciatori .aspect-video a:hover strong { color: #ff4b59 !important; }
+#cacciatori .cacciatori-screen::before,
+#cacciatori .cacciatori-screen::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+}
+#cacciatori .cacciatori-screen::before {
+  background:
+    repeating-linear-gradient(0deg, transparent 0 3px, rgba(255,255,255,.09) 3px 4px),
+    repeating-linear-gradient(90deg, rgba(255,0,45,.08) 0 2px, transparent 2px 9px);
+  mix-blend-mode: screen;
+  opacity: .8;
+  animation: cacciatori-interference 1.8s steps(6, end) infinite;
+}
+#cacciatori .cacciatori-screen::after {
+  background:
+    linear-gradient(90deg, transparent 0 8%, rgba(255,255,255,.18) 8% 9%, transparent 9% 24%, rgba(0,170,255,.12) 24% 26%, transparent 26% 100%),
+    repeating-linear-gradient(0deg, transparent 0 12px, rgba(255,255,255,.05) 12px 14px);
+  opacity: .5;
+  animation: cacciatori-glitch 1.2s steps(4, end) infinite;
+}
+#cacciatori .cacciatori-screen > span { position: relative; z-index: 1; }
+#cacciatori .cacciatori-screen__cta {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+#cacciatori .cacciatori-screen:hover::before,
+#cacciatori .cacciatori-screen:hover::after,
+#cacciatori .cacciatori-screen:focus-visible::before,
+#cacciatori .cacciatori-screen:focus-visible::after {
+  animation-play-state: paused;
+}
+#cacciatori .cacciatori-screen:hover .cacciatori-screen__cta,
+#cacciatori .cacciatori-screen:focus-visible .cacciatori-screen__cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+@keyframes cacciatori-interference {
+  0%, 100% { transform: translate(0, 0) skewX(0); }
+  20% { transform: translate(-2%, 1%) skewX(-1deg); }
+  42% { transform: translate(3%, -2%) skewX(1deg); }
+  65% { transform: translate(-1%, 2%); }
+  82% { transform: translate(2%, -1%) skewX(-2deg); }
+}
+@keyframes cacciatori-glitch {
+  0%, 100% { transform: translateX(0); clip-path: inset(0); }
+  28% { transform: translateX(-4%); clip-path: inset(18% 0 58%); }
+  31% { transform: translateX(5%); clip-path: inset(62% 0 12%); }
+  58% { transform: translateX(-2%); clip-path: inset(35% 0 38%); }
+}
 #cacciatori .mt-8.text-center a {
   border: 1px solid #d9273a;
   border-radius: 5px;
