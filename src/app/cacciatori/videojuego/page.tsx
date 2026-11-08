@@ -91,23 +91,9 @@ export default function VideojuegoPage() {
         </div>
       </section>
 
-      <section className="cac-section" id="mecanicas">
-        <div className="cac-container">
-          <div className="cac-section-head"><div><p className="cac-eyebrow">03 / SISTEMAS DE JUEGO</p><h2 className="cac-h2">Mecánicas</h2><p className="cac-intro">Las acciones concretas que permiten explorar, investigar y sobrevivir dentro del restaurante.</p></div><p className="cac-section-note">Acciones del jugador</p></div>
-          <InfoTable rows={mechanics} />
-        </div>
-      </section>
-
-      <section className="cac-section cac-section--dark">
-        <div className="cac-container">
-          <div className="cac-section-head"><div><p className="cac-eyebrow">04 / EXPERIENCIA</p><h2 className="cac-h2">Dinámicas</h2><p className="cac-intro">Las decisiones y comportamientos que transforman las mecánicas en una experiencia de tensión y descubrimiento.</p></div><p className="cac-section-note">Decisiones · riesgo · escape</p></div>
-          <InfoTable rows={dynamics} />
-        </div>
-      </section>
-
       <section className="cac-section" id="personajes">
         <div className="cac-container">
-          <div className="cac-section-head"><div><p className="cac-eyebrow">05 / PERSONAJES</p><h2 className="cac-h2">Tres presencias</h2><p className="cac-intro">Cada personaje ocupa una posición distinta dentro de la persecución y modifica la forma de leer el espacio.</p></div><p className="cac-section-note">Ficción · amenaza · vínculo</p></div>
+          <div className="cac-section-head"><div><p className="cac-eyebrow">03 / PERSONAJES</p><h2 className="cac-h2">Tres presencias</h2><p className="cac-intro">Cada personaje ocupa una posición distinta dentro de la persecución y modifica la forma de leer el espacio.</p></div><p className="cac-section-note">Ficción · amenaza · vínculo</p></div>
           <div className="cac-character-grid cac-game-character-grid">
             {characters.map((character) => <article className="cac-character" key={character.name}>
               <div className="cac-character__portrait"><Image src={character.image} alt={`Retrato de ${character.name}`} width={600} height={700} /></div>
@@ -119,10 +105,24 @@ export default function VideojuegoPage() {
 
       <section className="cac-section">
         <div className="cac-container">
-          <div className="cac-section-head"><div><p className="cac-eyebrow">06 / ESPACIOS</p><h2 className="cac-h2">El lugar de la amenaza</h2><p className="cac-intro">Dos escenarios conectados por una misma pregunta: ¿qué ocurrió realmente en Cacciatori?</p></div><p className="cac-section-note">Restaurante · sótano</p></div>
+          <div className="cac-section-head"><div><p className="cac-eyebrow">04 / ESPACIOS</p><h2 className="cac-h2">El lugar de la amenaza</h2><p className="cac-intro">Dos escenarios conectados por una misma pregunta: ¿qué ocurrió realmente en Cacciatori?</p></div><p className="cac-section-note">Restaurante · sótano</p></div>
           <div className="cac-scenario-grid">
             {scenarios.map((scenario) => <article className="cac-scenario" key={scenario.name}><div className="cac-scenario__image"><Image src={scenario.image} alt={`Escenario: ${scenario.name}`} width={1200} height={700} /></div><div className="cac-scenario__body"><p className="cac-eyebrow">ESCENARIO</p><h3>{scenario.name}</h3><p>{scenario.copy}</p></div></article>)}
           </div>
+        </div>
+      </section>
+
+      <section className="cac-section" id="mecanicas">
+        <div className="cac-container">
+          <div className="cac-section-head"><div><p className="cac-eyebrow">05 / SISTEMAS DE JUEGO</p><h2 className="cac-h2">Mecánicas</h2><p className="cac-intro">Las acciones concretas que permiten explorar, investigar y sobrevivir dentro del restaurante.</p></div><p className="cac-section-note">Acciones del jugador</p></div>
+          <InfoTable rows={mechanics} />
+        </div>
+      </section>
+
+      <section className="cac-section cac-section--dark">
+        <div className="cac-container">
+          <div className="cac-section-head"><div><p className="cac-eyebrow">06 / EXPERIENCIA</p><h2 className="cac-h2">Dinámicas</h2><p className="cac-intro">Las decisiones y comportamientos que transforman las mecánicas en una experiencia de tensión y descubrimiento.</p></div><p className="cac-section-note">Decisiones · riesgo · escape</p></div>
+          <InfoTable rows={dynamics} />
         </div>
       </section>
 
@@ -142,11 +142,11 @@ export default function VideojuegoPage() {
 
       <section className="cac-section cac-section--dark">
         <div className="cac-container">
-          <div className="cac-section-head"><div><p className="cac-eyebrow">09 / AUTORÍA</p><h2 className="cac-h2">Los creadores</h2><p className="cac-intro">Cacciatori es un proyecto creado por estudiantes multimedia.</p></div><p className="cac-section-note">Créditos del videojuego</p></div>
+          <div className="cac-section-head"><div><p className="cac-eyebrow">09 / AUTORÍA</p><h2 className="cac-h2">Los creadores</h2><p className="cac-intro">Cacciatori es un proyecto creado por estudiantes de Ingeniería en Multimedia.</p></div><p className="cac-section-note">Créditos del videojuego</p></div>
           <div className="cac-credit-people cac-game-authors">
-            <article className="cac-credit-person"><h3>Santiago</h3><p>Estudiante multimedia · Creador</p></article>
-            <article className="cac-credit-person"><h3>Sara</h3><p>Estudiante multimedia · Creadora</p></article>
-            <article className="cac-credit-person"><h3>Samuel</h3><p>Estudiante multimedia · Creador</p></article>
+            <article className="cac-credit-person"><h3>Santiago</h3><p>Estudiante de Ingeniería en Multimedia · Creador</p></article>
+            <article className="cac-credit-person"><h3>Sara</h3><p>Estudiante de Ingeniería en Multimedia · Creadora</p></article>
+            <article className="cac-credit-person"><h3>Samuel</h3><p>Estudiante de Ingeniería en Multimedia · Creador</p></article>
           </div>
         </div>
       </section>
