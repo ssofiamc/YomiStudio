@@ -1,82 +1,107 @@
 import Image from "next/image";
-import { CacciatoriAction } from "@/components/cacciatori/CacciatoriAction";
-import { cacciatoriAsset } from "@/components/cacciatori/assets";
+import { publicAsset } from "@/components/cacciatori/assets";
+
+const experience = ["Competitividad", "Ansiedad", "Presión", "Tensión", "Estrés", "Expectativa", "Inquietud", "Incertidumbre", "Desconcierto"];
 
 const rules = [
-  { number: "01 / OBJETIVO", icon: "↗", title: "Muévete y supera desafíos", text: "Avanza por el tablero, observa los espacios y reúne las pistas que te ayuden a seguir con vida." },
-  { number: "02 / PELIGRO", icon: "⌁", title: "Evita al chef y compite", text: "Las decisiones del resto alteran tu camino. Negocia, calcula y aprende cuándo no confiar." },
-  { number: "03 / SALIDA", icon: "✳", title: "Consigue las cartas", text: "Completa tus objetivos y busca una salida antes de que la casa decida cerrar sus puertas." },
-];
-const pawns = [
-  { image: "pawn-red.webp", id: "PIEZA_09 / EL ÁNGEL MUERTO", title: "Miniatura de bronce", text: "Una pieza de presencia imponente, marcada por el tono escarlata del expediente." },
-  { image: "pawn-orange.webp", id: "TABLERO_01 / LA MANSIÓN", title: "El mapa del pecado", text: "El recorrido es parte de la historia: cada casilla acerca a los jugadores a una nueva sospecha." },
-  { image: "pawn-yellow.webp", id: "ACCESORIO_04 / DADOS ARCANOS", title: "Dados de ónix", text: "Una referencia visual de las piezas y accesorios que completan la experiencia en mesa." },
+  { number: "01", title: "Todos son presas", text: "Cada jugador interpreta a una víctima atrapada en el restaurante y compite por ser quien consiga escapar." },
+  { number: "02", title: "Solo uno sobrevive", text: "La salvación es individual: avanzar implica tomar decisiones, asumir riesgos y dejar atrás a los demás." },
+  { number: "03", title: "El tiempo aprieta", text: "El reloj de arena de treinta segundos introduce urgencia y obliga a decidir bajo presión." },
+  { number: "04", title: "Las cartas se acumulan", text: "Las cartas y sus efectos aumentan la tensión, modifican la partida y mantienen la amenaza activa." },
 ];
 
 export default function BoardGamePage() {
   return (
     <>
-      <section className="cac-product-hero">
-        <div className="cac-container">
-          <div className="cac-product-hero__top"><div><p className="cac-eyebrow">PROTOCOLO VISUAL</p><h1 className="cac-h2">Tráiler / juego de mesa</h1></div><a className="cac-button" href="#reglas">EXPLORAR ↓</a></div>
-          <div className="cac-media-layout">
-            <div className="cac-media-frame">
-              <Image src={cacciatoriAsset("board-trailer.webp")} alt="Captura de referencia de una sesión del juego de mesa" width={967} height={545} priority sizes="(max-width:760px) 100vw, 68vw" />
-              <span className="cac-media-frame__rec">MATERIAL VISUAL / MESA 01</span>
-              <div className="cac-media-frame__play"><CacciatoriAction label="Iniciar reproducción" variant="play" title="Tráiler del juego de mesa" image="board-trailer.webp" description="La captura permite representar el encuadre del tráiler. El vídeo original no venía incluido, así que la reproducción debe conectarse cuando esté disponible." /></div>
-            </div>
-            <aside className="cac-advance">
-              <p className="cac-eyebrow">PROTOTIPO FÍSICO</p><h2>Avance editorial</h2>
-              <p className="cac-advance__summary">Una invitación a la mesa de los Cacciatori. Los componentes físicos conservan la misma maldición que sus contrapartes digitales. No juegues solo.</p>
-              <dl>
-                <div className="cac-spec"><dt>Formato</dt><dd>Juego de mesa</dd></div>
-                <div className="cac-spec"><dt>Duración</dt><dd>Por confirmar</dd></div>
-                <div className="cac-spec"><dt>Estado</dt><dd>Prototipo</dd></div>
-              </dl>
-              <CacciatoriAction label="VER DETALLES" title="Material del juego de mesa" description="Esta sección conserva los elementos y la jerarquía visual del prototipo. Las reglas definitivas y los materiales descargables pueden añadirse aquí cuando estén aprobados." />
-            </aside>
+      <section className="cac-game-board-hero">
+        <Image className="cac-game-board-hero__image" src={publicAsset("PredeJuego.png")} alt="Juego de mesa Prede del universo Cacciatori" fill priority sizes="100vw" />
+        <div className="cac-game-board-hero__veil" />
+        <div className="cac-container cac-game-board-hero__content">
+          <p className="cac-eyebrow">01 / PRODUCTO DEL UNIVERSO CACCIATORI</p>
+          <h1 className="cac-h1">Prede</h1>
+          <p className="cac-game-hero__claim">Una carrera por sobrevivir en el restaurante donde las sospechas se hicieron realidad.</p>
+          <a className="cac-button" href="#ficha-prede">CONOCER EL JUEGO ↓</a>
+        </div>
+      </section>
+
+      <section className="cac-section" id="ficha-prede">
+        <div className="cac-container cac-game-intro">
+          <div>
+            <p className="cac-eyebrow">02 / FICHA DEL PRODUCTO</p>
+            <h2 className="cac-h2">La mesa<br />está servida</h2>
+          </div>
+          <div>
+            <p className="cac-intro">Prede es un juego de mesa competitivo ambientado en el mismo restaurante del videojuego Cacciatori, pero situado en los hechos del pasado.</p>
+            <p className="cac-body-copy">Las sospechas de secuestro y las prácticas caníbales eran ciertas. Los jugadores encarnan a las presas del chef y deben escapar antes que los demás, porque solo uno puede salvarse.</p>
+            <dl className="cac-game-facts">
+              <div><dt>Tipo</dt><dd>Juego de mesa competitivo</dd></div>
+              <div><dt>Ambientación</dt><dd>Pasado del restaurante</dd></div>
+              <div><dt>Objetivo</dt><dd>Ser la única presa que escape</dd></div>
+              <div><dt>Formato</dt><dd>Imprimible y analógico</dd></div>
+            </dl>
           </div>
         </div>
       </section>
 
-      <section className="cac-section" id="reglas">
+      <section className="cac-section cac-section--dark">
+        <div className="cac-container cac-game-intro">
+          <div>
+            <p className="cac-eyebrow">03 / PROPÓSITO DEL DISEÑO</p>
+            <h2 className="cac-h2">Probar la tensión<br />sin tecnología</h2>
+          </div>
+          <div>
+            <p className="cac-intro">Prede nace como una herramienta para explorar cómo funcionan la presión, la urgencia y la vulnerabilidad dentro del universo Cacciatori.</p>
+            <p className="cac-body-copy">El formato analógico permite probar y ajustar las reglas con facilidad antes de llevar estas sensaciones al videojuego. El tiempo limitado, la competencia directa, la acumulación de cartas y la interacción entre jugadores hacen visible cómo reaccionan ante el riesgo y la amenaza.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="cac-section">
         <div className="cac-container">
-          <div className="cac-section-head"><div><p className="cac-eyebrow">03 / REGLAS</p><h2 className="cac-h2">Reglas del juego</h2></div><p className="cac-section-note">Lee las instrucciones antes de sentarte.</p></div>
-          <div className="cac-rules-grid">
-            {rules.map((rule) => <article className="cac-rule-card" key={rule.number}><span className="cac-rule-card__index">{rule.number}</span><div className="cac-rule-card__icon" aria-hidden="true">{rule.icon}</div><h3>{rule.title}</h3><p>{rule.text}</p></article>)}
-            <aside className="cac-rules-summary"><p className="cac-eyebrow">REGLAS</p><h3>Reglas del juego</h3><p>El manual final no se adjuntó todavía. Esta tarjeta queda preparada para incorporar la versión aprobada de las reglas.</p><CacciatoriAction label="EXPLORAR REGLAS" variant="red" title="Manual por incorporar" description="Cuando tengas las reglas completas, puedes enlazar un PDF o convertir cada sección en una ficha accesible dentro de esta página." /></aside>
+          <div className="cac-section-head"><div><p className="cac-eyebrow">04 / EXPERIENCIA OBJETIVO</p><h2 className="cac-h2">Jugar bajo presión</h2><p className="cac-intro">La experiencia busca que cada decisión se sienta urgente, incierta y potencialmente definitiva.</p></div><p className="cac-section-note">Fantasía · riesgo · supervivencia</p></div>
+          <div className="cac-experience-grid">
+            {experience.map((item, index) => <div className="cac-experience-item" key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></div>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="cac-section cac-section--dark" id="reglas">
+        <div className="cac-container">
+          <div className="cac-section-head"><div><p className="cac-eyebrow">05 / DINÁMICA DE JUEGO</p><h2 className="cac-h2">La huida comienza</h2><p className="cac-intro">Una partida convierte a los jugadores en presas que compiten por abandonar el restaurante con vida.</p></div><p className="cac-section-note">Reglas esenciales</p></div>
+          <div className="cac-rules-grid cac-prede-rules">
+            {rules.map((rule) => <article className="cac-rule-card" key={rule.number}><span className="cac-rule-card__index">{rule.number} / PREDE</span><h3>{rule.title}</h3><p>{rule.text}</p></article>)}
           </div>
         </div>
       </section>
 
       <section className="cac-section">
         <div className="cac-container">
-          <div className="cac-section-head"><div><p className="cac-eyebrow">04 / RELIQUIAS FÍSICAS</p><h2 className="cac-h2">Piezas de jugadores</h2></div><p className="cac-section-note">Componentes de la mesa / referencia visual</p></div>
-          <div className="cac-pawns-grid">
-            {pawns.map((pawn) => <article className="cac-pawn-card" key={pawn.title}><Image src={cacciatoriAsset(pawn.image)} alt={pawn.title} width={492} height={492} sizes="(max-width:760px) 100vw, 33vw" /><div className="cac-pawn-card__body"><p className="cac-eyebrow">{pawn.id}</p><h3>{pawn.title}</h3><p>{pawn.text}</p></div></article>)}
+          <div className="cac-section-head"><div><p className="cac-eyebrow">06 / MATERIALES</p><h2 className="cac-h2">Prepara la partida</h2><p className="cac-intro">Los archivos descargables contienen los materiales imprimibles para construir el juego en casa.</p></div><p className="cac-section-note">Lo que necesitas</p></div>
+          <div className="cac-materials-grid">
+            <article><span className="cac-eyebrow">INCLUIDO EN EL PIECEPACK</span><h3>Cartas y mapa</h3><p>Descarga e imprime el Piecepack para obtener las cartas y el mapa necesarios para jugar.</p></article>
+            <article><span className="cac-eyebrow">NO INCLUIDO</span><h3>Elementos adicionales</h3><p>También necesitas 7 fichas: una para el chef y seis para los jugadores, un dado de seis caras y un reloj de arena de treinta segundos.</p></article>
           </div>
         </div>
       </section>
 
-      <section className="cac-section">
-        <div className="cac-container cac-process">
-          <div className="cac-process__image"><Image src={cacciatoriAsset("board-map.webp")} alt="Vista del tablero prototipado" width={935} height={465} sizes="(max-width:760px) 100vw, 60vw" /></div>
-          <div className="cac-process__copy"><p className="cac-eyebrow">05 / DESARROLLO</p><h3>Proceso creativo</h3><p>El tablero, las piezas y las reglas se entienden como un solo sistema. La documentación del proceso permitirá seguir los ajustes entre el prototipo visual y la experiencia en mesa.</p><ul><li>Diseño del tablero y recorridos</li><li>Componentes y materiales</li><li>Balanceo y pruebas de juego</li></ul><CacciatoriAction label="VER DOCUMENTACIÓN" title="Notas del diseñador" description="El ZIP compartido incluye las pantallas de referencia, no las notas ni el manual de producción. Esta acción queda lista para conectarse al documento final." /></div>
+      <section className="cac-section cac-section--dark">
+        <div className="cac-container">
+          <div className="cac-section-head"><div><p className="cac-eyebrow">07 / DESCARGAS</p><h2 className="cac-h2">Juega Prede</h2><p className="cac-intro">Descarga los archivos, imprime los componentes y consulta las reglas antes de comenzar.</p></div><p className="cac-section-note">Archivos para imprimir</p></div>
+          <div className="cac-download-grid">
+            <a className="cac-download-card" href="https://drive.google.com/file/d/1FqIOCJ2uG2EHsvllxxbmIt7qtygkwQyS/view?usp=drive_link" target="_blank" rel="noreferrer"><span className="cac-eyebrow">PDF / PIECEPACK</span><h3>Piecepack de Prede</h3><p>Cartas y mapa imprimibles para preparar la partida.</p><strong>ABRIR PDF EN DRIVE ↗</strong></a>
+            <a className="cac-download-card" href="https://drive.google.com/file/d/17UUW2ZgB8ANMtRkgzTjn-FwLNBF1G3O8/view?usp=drive_link" target="_blank" rel="noreferrer"><span className="cac-eyebrow">PDF / REGLAS</span><h3>Reglas de Prede</h3><p>Manual de instrucciones para entender el objetivo y el desarrollo del juego.</p><strong>ABRIR PDF EN DRIVE ↗</strong></a>
+          </div>
         </div>
       </section>
 
       <section className="cac-section">
         <div className="cac-container">
-          <div className="cac-section-head"><div><p className="cac-eyebrow">06 / ADQUISICIÓN</p><h2 className="cac-h2">Adquirir el juego</h2></div></div>
-          <div className="cac-acquire">
-            <div className="cac-acquire__edition"><p className="cac-eyebrow">EDICIÓN COLECCIONISTA</p><h3>La mesa está servida</h3><p>PRECIO POR CONFIRMAR</p><CacciatoriAction label="RECLAMAR PROPIEDAD" title="Adquisición no habilitada" description="La pantalla del prototipo muestra un flujo de compra, pero no se proporcionaron precio definitivo, inventario ni pasarela de pago. Para evitar una compra ficticia, el botón informa del estado actual." /></div>
-            <div className="cac-access__specs"><h3>Información de envío</h3><dl><div className="cac-spec"><dt>Disponibilidad</dt><dd>Por confirmar</dd></div><div className="cac-spec"><dt>Envío</dt><dd>Por definir</dd></div><div className="cac-spec"><dt>Distribución</dt><dd>Información pendiente</dd></div></dl><p className="cac-advance__summary">El módulo comercial queda preparado para recibir los datos reales del producto cuando estén definidos.</p></div>
+          <div className="cac-section-head"><div><p className="cac-eyebrow">08 / AUTORÍA</p><h2 className="cac-h2">Creadores de Prede</h2><p className="cac-intro">Juego de mesa creado por estudiantes de Ingeniería en Multimedia.</p></div><p className="cac-section-note">Créditos del producto</p></div>
+          <div className="cac-credit-people cac-game-authors">
+            <article className="cac-credit-person"><h3>Santiago</h3><p>Estudiante de Ingeniería en Multimedia · Creador</p></article>
+            <article className="cac-credit-person"><h3>Sara</h3><p>Estudiante de Ingeniería en Multimedia · Creadora</p></article>
           </div>
         </div>
-      </section>
-
-      <section className="cac-section">
-        <div className="cac-container"><div className="cac-section-head"><div><p className="cac-eyebrow">07 / CRÉDITOS</p><h2 className="cac-h2">Los culpables</h2></div><p className="cac-section-note">Diseño de juego · producción · arte</p></div><div className="cac-credit-people"><article className="cac-credit-person"><div className="cac-credit-person__portrait">D</div><h3>Diseño de juego</h3><p>Reglas · recorridos</p></article><article className="cac-credit-person"><div className="cac-credit-person__portrait">A</div><h3>Arte y componentes</h3><p>Tablero · piezas</p></article><article className="cac-credit-person"><div className="cac-credit-person__portrait">P</div><h3>Producción</h3><p>Prototipo · pruebas</p></article></div></div>
       </section>
     </>
   );
