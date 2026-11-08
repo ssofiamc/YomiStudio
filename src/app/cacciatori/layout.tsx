@@ -5,7 +5,7 @@ import "./cacciatori.css";
 
 export const metadata: Metadata = {
   title: "Cacciatori — Universo transmedia | YOMI Studio",
-  description: "Explora el archivo del universo Cacciatori: videojuego, juego de mesa, narrativa interactiva y cómic.",
+  description: "Explora el universo Cacciatori: una historia entre la perfección de la culinaria italiana y la brutalidad humana.",
 };
 
 export default function CacciatoriLayout({ children }: Readonly<{ children: ReactNode }>) {

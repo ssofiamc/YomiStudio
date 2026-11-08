@@ -7,12 +7,12 @@ type Passage = { index: string; title: string; text: string; choices?: Choice[];
 
 const passages: Record<string, Passage> = {
   entrada: {
-    index: "NODO_001 / ARCHIVO_ABIERTO",
+    index: "NODO_001 / SEÑAL ABIERTA",
     title: "El registro está húmedo.",
     text: "La hoja no tiene fecha, pero la tinta todavía mancha los dedos. Bajo la mesa, una línea oscura cruza el suelo hasta la puerta del despacho. Alguien ha arrancado la última página del libro de reservas.",
     choices: [
       { label: "Seguir el rastro hasta la cocina", target: "cocina" },
-      { label: "Guardar el registro antes de que desaparezca", target: "archivo" },
+      { label: "Guardar la señal antes de que desaparezca", target: "archivo" },
     ],
   },
   cocina: {
@@ -26,7 +26,7 @@ const passages: Record<string, Passage> = {
   },
   archivo: {
     index: "NODO_008 / REGISTRO_FRAGMENTADO",
-    title: "El archivo tiene dos fondos.",
+    title: "La señal tiene dos fondos.",
     text: "Detrás de las facturas hay un sobre con tu nombre. En el interior, una fotografía recortada y una nota: «No todas las personas que entran aquí llegan como clientes».",
     choices: [
       { label: "Romper el sello y mirar la fotografía", target: "camara" },
@@ -61,7 +61,7 @@ const passages: Record<string, Passage> = {
   final_publico: {
     index: "NODO_031 / COPIA_DISTRIBUIDA",
     title: "La copia ya no te pertenece.",
-    text: "El archivo se replica en pantallas que no conoces. Cada copia añade una nueva línea al registro y todas terminan con tu nombre. El silencio deja de ser una opción.",
+    text: "La señal se replica en pantallas que no conoces. Cada copia añade una nueva línea al registro y todas terminan con tu nombre. El silencio deja de ser una opción.",
     ending: true,
     choices: [{ label: "Volver al primer registro", target: "entrada" }],
   },

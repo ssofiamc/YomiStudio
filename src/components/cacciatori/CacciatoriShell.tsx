@@ -6,10 +6,8 @@ import type { ReactNode } from "react";
 
 const navigation = [
   { href: "/cacciatori", label: "Inicio" },
-  { href: "/cacciatori/videojuego", label: "Videojuego" },
-  { href: "/cacciatori/juego-de-mesa", label: "Juego de mesa" },
-  { href: "/cacciatori/twine", label: "Twine" },
-  { href: "/cacciatori/comic", label: "Cómic" },
+  { href: "/cacciatori#receta", label: "Receta" },
+  { href: "/cacciatori#productos", label: "Platos principales" },
 ];
 
 export function CacciatoriShell({ children }: { children: ReactNode }) {
@@ -25,12 +23,11 @@ export function CacciatoriShell({ children }: { children: ReactNode }) {
             return <Link key={item.href} className={`cac-nav__link${active ? " is-active" : ""}`} href={item.href} aria-current={active ? "page" : undefined}>{item.label}</Link>;
           })}
         </nav>
-        <div className="cac-header__status"><span className="cac-status-dot" /> ARCHIVO VIVO <span className="cac-header__edition">EST. MCMXCVIII</span></div>
       </header>
       <main id="contenido-cacciatori" className="cac-main">{children}</main>
       <footer className="cac-footer">
         <div className="cac-footer__brand"><Link href="/" className="cac-footer__wordmark">YOMI STUDIO</Link><p>Relatos que se sirven oscuros.</p></div>
-        <div className="cac-footer__meta"><span>UNIVERSO TRANSMEDIA</span><span>ARCHIVO 01—04</span><Link href="/">VOLVER AL ESTUDIO ↗</Link></div>
+        <div className="cac-footer__meta"><span>UNIVERSO CACCIATORI</span><Link href="/">VOLVER AL ESTUDIO ↗</Link></div>
         <a className="cac-back-top" href="#contenido-cacciatori" aria-label="Volver al inicio de la página">↑</a>
       </footer>
     </div>

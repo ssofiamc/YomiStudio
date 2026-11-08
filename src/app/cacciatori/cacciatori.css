@@ -51,7 +51,7 @@
 .cac-section-head > div { max-width: 900px; }
 .cac-section-head .cac-h2 { margin-top: 12px; }
 .cac-section-note { max-width: 250px; margin: 0 0 5px; color: #706a61; font-family: 'Courier New', monospace; font-size: 10px; letter-spacing: .13em; text-align: right; text-transform: uppercase; }
-.cac-button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 46px; padding: 12px 20px; border: 1px solid var(--cac-yellow); background: transparent; color: var(--cac-yellow); cursor: pointer; font-family: 'Courier New', monospace !important; font-size: 10px; font-weight: 700; letter-spacing: .22em; text-align: center; text-transform: uppercase; transition: background .2s ease, color .2s ease, border-color .2s ease; }
+.cac-button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; max-width: 100%; padding: 13px 18px; border: 1px solid var(--cac-yellow); background: transparent; color: var(--cac-yellow); cursor: pointer; font-family: 'Courier New', monospace !important; font-size: clamp(9px, .7vw, 11px); font-weight: 700; letter-spacing: .14em; line-height: 1.3; text-align: center; text-transform: uppercase; white-space: normal; transition: background .2s ease, color .2s ease, border-color .2s ease; }
 .cac-button:hover { background: var(--cac-yellow); color: #070707; }
 .cac-button--red { border-color: var(--cac-red); color: #d83b40; }
 .cac-button--red:hover { background: var(--cac-red); color: #fff; }
@@ -70,7 +70,7 @@
 .cac-modal__image { display: block; width: 100%; height: auto; max-height: 250px; object-fit: cover; border: 1px solid var(--cac-line); margin: 22px 0; }
 .cac-modal__status { display: flex; align-items: center; gap: 10px; margin: 22px 0; padding-top: 14px; border-top: 1px solid var(--cac-line); color: #777166; font-family: 'Courier New', monospace; font-size: 9px; letter-spacing: .12em; }
 
-/* Portada del archivo */
+/* Portada de Cacciatori */
 .cac-hero { position: relative; min-height: min(850px, calc(100vh - 72px)); min-height: clamp(650px, 82vh, 930px); display: flex; align-items: center; isolation: isolate; overflow: hidden; border-bottom: 1px solid var(--cac-line); }
 .cac-hero::before, .cac-hero::after { content: ''; position: absolute; inset: 0; z-index: -1; }
 .cac-hero::before { background-size: cover; background-position: center 42%; filter: saturate(.72); transform: scale(1.02); }
@@ -217,7 +217,7 @@
 .cac-buy-panel__copy p { color: #999185; line-height: 1.8; }
 .cac-buy-meta { display: flex; flex-wrap: wrap; gap: 10px 25px; margin: 18px 0 24px; color: var(--cac-yellow); font-family: 'Courier New', monospace; font-size: 9px; letter-spacing: .15em; text-transform: uppercase; }
 
-/* Twine: archivo narrativo interactivo */
+/* Twine: narrativa interactiva */
 .cac-twine-hero { padding: clamp(55px, 7vw, 90px) 0 clamp(60px, 8vw, 110px); background: radial-gradient(ellipse at 25% 0%, rgba(84,9,9,.25), transparent 55%), #070403; }
 .cac-twine-hero__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; margin-bottom: 32px; }
 .cac-twine-hero__head h1 { margin: 12px 0 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(35px, 5.5vw, 73px); font-weight: 400; letter-spacing: -.04em; line-height: .98; }
@@ -295,7 +295,7 @@
   .cac-header__status { display: none; }
   .cac-nav { gap: 21px; }
   .cac-nav__link { font-size: 9px; }
-  .cac-button { padding-inline: 12px; letter-spacing: .12em; }
+  .cac-button { padding-inline: 12px; letter-spacing: .08em; }
   .cac-rules-grid { grid-template-columns: 1fr; }
   .cac-product-card { grid-template-columns: minmax(100px,.75fr) minmax(0,1.25fr); }
   .cac-product-card__body h3 { font-size: 21px; }
@@ -393,4 +393,3 @@
 .cac-site :where(img, video, canvas, svg) {
   max-width: 100%;
 }
-

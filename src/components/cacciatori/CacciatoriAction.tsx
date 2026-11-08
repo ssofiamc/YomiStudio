@@ -45,12 +45,12 @@ export function CacciatoriAction({ label, title, description, image, variant = "
             onMouseDown={(event) => event.stopPropagation()}
           >
             <button type="button" className="cac-modal__close" onClick={() => setOpen(false)} aria-label="Cerrar ventana">×</button>
-            <p className="cac-eyebrow">ARCHIVO CACCIATORI / ESTADO DEL RECURSO</p>
+            <p className="cac-eyebrow">CACCIATORI / ESTADO DEL RECURSO</p>
             <h2 id="cac-modal-title">{title}</h2>
-            {image && <Image className="cac-modal__image" src={cacciatoriAsset(image)} alt="Previsualización visual del archivo" width={1200} height={700} />}
+            {image && <Image className="cac-modal__image" src={cacciatoriAsset(image)} alt="Previsualización visual" width={1200} height={700} />}
             <p>{description}</p>
             <div className="cac-modal__status"><span className="cac-status-dot" /> RECURSO EXTERNO NO CONFIGURADO</div>
-            <button type="button" className="cac-button cac-button--light" onClick={() => setOpen(false)}>VOLVER AL ARCHIVO</button>
+            <button type="button" className="cac-button cac-button--light" onClick={() => setOpen(false)}>VOLVER</button>
           </section>
         </div>
       )}

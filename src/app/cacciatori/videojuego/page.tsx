@@ -24,8 +24,8 @@ export default function VideojuegoPage() {
           <div className="cac-media-layout">
             <div className="cac-media-frame">
               <Image src={cacciatoriAsset("game-trailer.webp")} alt="Captura de referencia del escenario del videojuego Cacciatori" width={1055} height={592} priority sizes="(max-width:760px) 100vw, 68vw" />
-              <span className="cac-media-frame__rec">REC · ARCHIVO VISUAL 01</span>
-              <div className="cac-media-frame__play"><CacciatoriAction label="Reproducir tráiler" variant="play" title="Tráiler del videojuego" image="game-trailer.webp" description="El prototipo muestra una vista previa, pero el ZIP no incluye el archivo original del tráiler. Este botón queda preparado para enlazar el vídeo oficial cuando esté disponible." /></div>
+              <span className="cac-media-frame__rec">REC · MATERIAL VISUAL</span>
+              <div className="cac-media-frame__play"><CacciatoriAction label="Reproducir tráiler" variant="play" title="Tráiler del videojuego" image="game-trailer.webp" description="La vista previa representa el tráiler; el vídeo original aún no está conectado. Este botón queda preparado para enlazar el vídeo oficial cuando esté disponible." /></div>
             </div>
             <aside className="cac-advance">
               <p className="cac-eyebrow">TRÁILER PRINCIPAL</p><h2>Avance editorial</h2>
@@ -47,7 +47,7 @@ export default function VideojuegoPage() {
           <div className="cac-section-head"><div><p className="cac-eyebrow">03 / EXPERIENCIA</p><h2 className="cac-h2">Mecánicas y flujo</h2></div><p className="cac-section-note">Señales · recorrido · observación</p></div>
           <div className="cac-four-grid">
             {mechanics.map((item) => <article className="cac-mechanic-card" key={item.title}>
-              <div className="cac-mechanic-card__art" style={{ "--skull-hue": item.hue } as CSSProperties}><Image src={cacciatoriAsset("game-skull.webp")} alt="Diagrama visual del archivo" width={334} height={442} /><span>{item.number}</span></div>
+              <div className="cac-mechanic-card__art" style={{ "--skull-hue": item.hue } as CSSProperties}><Image src={cacciatoriAsset("game-skull.webp")} alt="Diagrama visual del videojuego" width={334} height={442} /><span>{item.number}</span></div>
               <div className="cac-mechanic-card__body"><h3>{item.title}</h3><p>{item.copy}</p></div>
             </article>)}
           </div>
@@ -56,7 +56,7 @@ export default function VideojuegoPage() {
 
       <section className="cac-section">
         <div className="cac-container">
-          <div className="cac-section-head"><div><p className="cac-eyebrow">04 / PERSONAJES</p><h2 className="cac-h2">Perfil de personaje</h2></div><p className="cac-section-note">Archivo de figuras / ficha provisional</p></div>
+          <div className="cac-section-head"><div><p className="cac-eyebrow">PERSONAJES</p><h2 className="cac-h2">Perfil de personaje</h2></div><p className="cac-section-note">Figuras del universo</p></div>
           <div className="cac-character-grid">
             {characters.map((character) => <article className="cac-character" key={character.name}>
               <div className="cac-character__portrait"><Image src={cacciatoriAsset(character.image)} alt={`Concepto visual de ${character.name}`} width={455} height={565} /></div>
@@ -69,7 +69,7 @@ export default function VideojuegoPage() {
       <section className="cac-section">
         <div className="cac-container cac-process">
           <div className="cac-process__image"><Image src={cacciatoriAsset("game-symbol.webp")} alt="Símbolo gráfico del universo Cacciatori" width={470} height={580} /></div>
-          <div className="cac-process__copy"><p className="cac-eyebrow">05 / DESARROLLO</p><h3>Proceso creativo</h3><p>La documentación del desarrollo reúne decisiones de arte conceptual, diseño de escenarios, sistemas de juego y construcción narrativa.</p><ul><li>Arte conceptual / assets</li><li>Prototipado y pruebas de experiencia</li><li>Diseño narrativo y ambientación</li></ul><CacciatoriAction label="CONSULTAR MATERIAL" title="Archivo de desarrollo" description="No se incluyeron documentos descargables del proceso creativo en los archivos recibidos. Esta sección está lista para conectar una carpeta, PDF o repositorio de materiales." /></div>
+          <div className="cac-process__copy"><p className="cac-eyebrow">DESARROLLO</p><h3>Proceso creativo</h3><p>La documentación del desarrollo reúne decisiones de arte conceptual, diseño de escenarios, sistemas de juego y construcción narrativa.</p><ul><li>Arte conceptual / assets</li><li>Prototipado y pruebas de experiencia</li><li>Diseño narrativo y ambientación</li></ul><CacciatoriAction label="CONSULTAR MATERIAL" title="Material de desarrollo" description="Esta sección está lista para conectar una carpeta, PDF o repositorio de materiales." /></div>
         </div>
       </section>
 

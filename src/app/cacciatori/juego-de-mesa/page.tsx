@@ -18,12 +18,12 @@ export default function BoardGamePage() {
     <>
       <section className="cac-product-hero">
         <div className="cac-container">
-          <div className="cac-product-hero__top"><div><p className="cac-eyebrow">02 / PROTOCOLO VISUAL</p><h1 className="cac-h2">Tráiler / juego de mesa</h1></div><a className="cac-button" href="#reglas">EXPLORAR ARCHIVOS ↓</a></div>
+          <div className="cac-product-hero__top"><div><p className="cac-eyebrow">PROTOCOLO VISUAL</p><h1 className="cac-h2">Tráiler / juego de mesa</h1></div><a className="cac-button" href="#reglas">EXPLORAR ↓</a></div>
           <div className="cac-media-layout">
             <div className="cac-media-frame">
               <Image src={cacciatoriAsset("board-trailer.webp")} alt="Captura de referencia de una sesión del juego de mesa" width={967} height={545} priority sizes="(max-width:760px) 100vw, 68vw" />
-              <span className="cac-media-frame__rec">ARCHIVO VISUAL / MESA 01</span>
-              <div className="cac-media-frame__play"><CacciatoriAction label="Iniciar reproducción" variant="play" title="Tráiler del juego de mesa" image="board-trailer.webp" description="La captura permite representar el encuadre del tráiler del prototipo. El archivo original de vídeo no venía incluido, así que la reproducción debe conectarse cuando esté disponible." /></div>
+              <span className="cac-media-frame__rec">MATERIAL VISUAL / MESA 01</span>
+              <div className="cac-media-frame__play"><CacciatoriAction label="Iniciar reproducción" variant="play" title="Tráiler del juego de mesa" image="board-trailer.webp" description="La captura permite representar el encuadre del tráiler. El vídeo original no venía incluido, así que la reproducción debe conectarse cuando esté disponible." /></div>
             </div>
             <aside className="cac-advance">
               <p className="cac-eyebrow">PROTOTIPO FÍSICO</p><h2>Avance editorial</h2>
@@ -44,7 +44,7 @@ export default function BoardGamePage() {
           <div className="cac-section-head"><div><p className="cac-eyebrow">03 / REGLAS</p><h2 className="cac-h2">Reglas del juego</h2></div><p className="cac-section-note">Lee las instrucciones antes de sentarte.</p></div>
           <div className="cac-rules-grid">
             {rules.map((rule) => <article className="cac-rule-card" key={rule.number}><span className="cac-rule-card__index">{rule.number}</span><div className="cac-rule-card__icon" aria-hidden="true">{rule.icon}</div><h3>{rule.title}</h3><p>{rule.text}</p></article>)}
-            <aside className="cac-rules-summary"><p className="cac-eyebrow">ARCHIVO DE REGLAS</p><h3>Reglas del juego</h3><p>El manual final no se adjuntó en la carpeta. Esta tarjeta queda como entrada para insertar el PDF o la versión aprobada de las reglas.</p><CacciatoriAction label="EXPLORAR ARCHIVO" variant="red" title="Manual por incorporar" description="Cuando tengas las reglas completas, puedes enlazar un PDF o convertir cada sección en una ficha accesible dentro de esta página." /></aside>
+            <aside className="cac-rules-summary"><p className="cac-eyebrow">REGLAS</p><h3>Reglas del juego</h3><p>El manual final no se adjuntó todavía. Esta tarjeta queda preparada para incorporar la versión aprobada de las reglas.</p><CacciatoriAction label="EXPLORAR REGLAS" variant="red" title="Manual por incorporar" description="Cuando tengas las reglas completas, puedes enlazar un PDF o convertir cada sección en una ficha accesible dentro de esta página." /></aside>
           </div>
         </div>
       </section>

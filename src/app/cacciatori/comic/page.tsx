@@ -43,7 +43,7 @@ export default function ComicPage() {
 
       <section className="cac-section">
         <div className="cac-container">
-          <div className="cac-section-head"><div><p className="cac-eyebrow">03 / PERSONAJES</p><h2 className="cac-h2">El reparto del silencio</h2></div><p className="cac-section-note">Archivo de personajes / ficción</p></div>
+          <div className="cac-section-head"><div><p className="cac-eyebrow">PERSONAJES</p><h2 className="cac-h2">El reparto del silencio</h2></div><p className="cac-section-note">Personajes / ficción</p></div>
           <div className="cac-character-grid" style={{ gridTemplateColumns: "repeat(2,minmax(0,1fr))" }}>
             <article className="cac-character"><div className="cac-character__portrait"><Image src={cacciatoriAsset("comic-vincenzo.webp")} alt="Ilustración de Vincenzo" width={495} height={625} /></div><div className="cac-character__body"><p>PERSONAJE_01 / VINCENZO</p><h3>Vincenzo</h3><p>El restaurador. Sus manos conocen la textura de la piedra y la sangre.</p></div></article>
             <article className="cac-character"><div className="cac-character__portrait"><Image src={cacciatoriAsset("comic-carlo.webp")} alt="Ilustración de Carlo" width={455} height={625} /></div><div className="cac-character__body"><p>PERSONAJE_02 / CARLO</p><h3>Carlo</h3><p>El silencio. Un pasajero enterrado bajo los cimientos del restaurante.</p></div></article>
@@ -57,7 +57,7 @@ export default function ComicPage() {
           <div className="cac-art-grid">
             <article className="cac-art-card"><Image src={cacciatoriAsset("comic-scenarios.webp")} alt="Referencias visuales de escenarios" width={745} height={685} /><div className="cac-art-card__body"><h3>Escenarios</h3><p>Restaurante, espacios interiores y lugares que convierten la rutina en una atmósfera inquietante.</p></div></article>
             <article className="cac-art-card"><Image src={cacciatoriAsset("comic-sketches.webp")} alt="Pruebas de arte y bocetos" width={440} height={685} /><div className="cac-art-card__body"><h3>Pruebas de arte</h3><p>Variaciones de personaje, siluetas y decisiones visuales de la obra.</p></div></article>
-            <article className="cac-art-card"><div className="cac-art-card__body"><p className="cac-eyebrow">PROCESO CREATIVO</p><h3>La cocina detrás de la historia</h3><p>Cada panel es una decisión. Una combinación de encuadre, sombra y trazo que construye el tono del relato.</p><p style={{ marginTop: 22 }}>ARCHIVO / ARTE-CONCEPTUAL</p></div></article>
+            <article className="cac-art-card"><div className="cac-art-card__body"><p className="cac-eyebrow">PROCESO CREATIVO</p><h3>La cocina detrás de la historia</h3><p>Cada panel es una decisión. Una combinación de encuadre, sombra y trazo que construye el tono del relato.</p><p style={{ marginTop: 22 }}>ARTE CONCEPTUAL</p></div></article>
           </div>
         </div>
       </section>
