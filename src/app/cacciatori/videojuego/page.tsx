@@ -142,7 +142,7 @@ export default function VideojuegoPage() {
 
       <section className="cac-section cac-section--dark">
         <div className="cac-container">
-          <div className="cac-section-head"><div><p className="cac-eyebrow">09 / AUTORÍA</p><h2 className="cac-h2">Los creadores</h2><p className="cac-intro">Cacciatori es un proyecto creado por estudiantes de Ingeniería en Multimedia.</p></div><p className="cac-section-note">Créditos del videojuego</p></div>
+          <div className="cac-section-head"><div><p className="cac-eyebrow">09 / AUTORÍA</p><h2 className="cac-h2">Los culpables</h2><p className="cac-intro">Cacciatori es un proyecto creado por estudiantes de Ingeniería en Multimedia.</p></div><p className="cac-section-note">Créditos del videojuego</p></div>
           <div className="cac-credit-people cac-game-authors">
             <article className="cac-credit-person"><h3>Santiago</h3><p>Estudiante de Ingeniería en Multimedia · Creador</p></article>
             <article className="cac-credit-person"><h3>Sara</h3><p>Estudiante de Ingeniería en Multimedia · Creadora</p></article>

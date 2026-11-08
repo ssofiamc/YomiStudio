@@ -96,7 +96,7 @@ export default function BoardGamePage() {
 
       <section className="cac-section">
         <div className="cac-container">
-          <div className="cac-section-head"><div><p className="cac-eyebrow">08 / AUTORÍA</p><h2 className="cac-h2">Creadores de Prede</h2><p className="cac-intro">Juego de mesa creado por estudiantes de Ingeniería en Multimedia.</p></div><p className="cac-section-note">Créditos del producto</p></div>
+          <div className="cac-section-head"><div><p className="cac-eyebrow">08 / AUTORÍA</p><h2 className="cac-h2">Los culpables</h2><p className="cac-intro">Juego de mesa creado por estudiantes de Ingeniería en Multimedia.</p></div><p className="cac-section-note">Créditos del producto</p></div>
           <div className="cac-credit-people cac-game-authors">
             <article className="cac-credit-person"><h3>Santiago</h3><p>Estudiante de Ingeniería en Multimedia · Creador</p></article>
             <article className="cac-credit-person"><h3>Sara</h3><p>Estudiante de Ingeniería en Multimedia · Creadora</p></article>
