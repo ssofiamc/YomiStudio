@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { cacciatoriAsset } from "@/components/cacciatori/assets";
+import { cacciatoriAsset, publicAsset } from "@/components/cacciatori/assets";
 
 const products = [
   {
     number: "EXPERIENCIA INTERACTIVA",
     title: "Videojuego",
     copy: "Recorre el restaurante, sus personajes y las señales que se esconden a plena vista.",
-    image: "game-symbol.webp",
+    image: "CapVideojuego.png",
+    imageType: "public",
     href: "/cacciatori/videojuego",
     action: "Explorar videojuego",
   },
@@ -15,7 +16,8 @@ const products = [
     number: "EXPERIENCIA FÍSICA",
     title: "Juego de mesa",
     copy: "Una mesa, varias sospechas y una salida que no siempre está donde debería.",
-    image: "board-cover.webp",
+    image: "PredeJuego.png",
+    imageType: "public",
     href: "/cacciatori/juego-de-mesa",
     action: "Explorar juego de mesa",
   },
@@ -23,7 +25,8 @@ const products = [
     number: "EXPERIENCIA NARRATIVA",
     title: "Twine",
     copy: "Sigue los nodos de una historia fragmentada. Lo que decidas conservar también cuenta.",
-    image: "prede-pizza.webp",
+    image: "CapTwine.jpg",
+    imageType: "public",
     href: "/cacciatori/twine",
     action: "Abrir narrativa",
   },
@@ -31,7 +34,8 @@ const products = [
     number: "RELATO ILUSTRADO",
     title: "Cómic",
     copy: "Conoce el expediente editorial de Ossessione y las piezas que rodean sus páginas.",
-    image: "comic-cover.webp",
+    image: "CapComic.png",
+    imageType: "public",
     href: "/cacciatori/comic",
     action: "Leer expediente",
   },
@@ -75,7 +79,7 @@ export default function CacciatoriPage() {
           <div className="cac-product-grid">
             {products.map((product) => (
               <Link className="cac-product-card" href={product.href} key={product.href}>
-                <div className="cac-product-card__image"><Image src={cacciatoriAsset(product.image)} alt={`Imagen del apartado ${product.title}`} width={800} height={1000} sizes="(max-width: 760px) 40vw, 30vw" /></div>
+                <div className="cac-product-card__image"><Image src={product.imageType === "public" ? publicAsset(product.image) : cacciatoriAsset(product.image)} alt={`Imagen del apartado ${product.title}`} width={800} height={1000} sizes="(max-width: 760px) 40vw, 30vw" /></div>
                 <div className="cac-product-card__body">
                   <span className="cac-product-card__num">{product.number}</span>
                   <h3>{product.title}</h3>
