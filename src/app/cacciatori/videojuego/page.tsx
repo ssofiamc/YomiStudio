@@ -135,8 +135,19 @@ export default function VideojuegoPage() {
 
       <section className="cac-section">
         <div className="cac-container cac-game-access">
-          <div><p className="cac-eyebrow">08 / ESTADO DEL PRODUCTO</p><h2 className="cac-h2">Una experiencia<br />en construcción</h2></div>
-          <div><p className="cac-intro">El videojuego Cacciatori es el producto principal del universo y continúa desarrollándose como una experiencia de terror psicológico, investigación y supervivencia.</p><p className="cac-body-copy">La página se actualizará con la demo, plataforma y enlace de acceso oficial cuando estén disponibles.</p></div>
+          <div><p className="cac-eyebrow">08 / DESARROLLO Y ACCESO</p><h2 className="cac-h2">El juego<br />sigue vivo</h2></div>
+          <div><p className="cac-intro">El desarrollo del videojuego Cacciatori puede consultarse en su repositorio oficial de GitHub.</p><p className="cac-body-copy">En este mismo repositorio también puedes descargar la última release, correspondiente a la versión más actualizada del juego.</p><div className="cac-game-hero__actions"><a className="cac-button" href="https://github.com/DavidSantiAmaya/Cacciatori.git" target="_blank" rel="noreferrer">VER REPOSITORIO ↗</a><a className="cac-button cac-button--red" href="https://github.com/DavidSantiAmaya/Cacciatori/releases/latest" target="_blank" rel="noreferrer">DESCARGAR ÚLTIMA RELEASE ↗</a></div></div>
+        </div>
+      </section>
+
+      <section className="cac-section cac-section--dark">
+        <div className="cac-container">
+          <div className="cac-section-head"><div><p className="cac-eyebrow">09 / AUTORÍA</p><h2 className="cac-h2">Los creadores</h2><p className="cac-intro">Cacciatori es un proyecto creado por estudiantes multimedia.</p></div><p className="cac-section-note">Créditos del videojuego</p></div>
+          <div className="cac-credit-people cac-game-authors">
+            <article className="cac-credit-person"><h3>Santiago</h3><p>Estudiante multimedia · Creador</p></article>
+            <article className="cac-credit-person"><h3>Sara</h3><p>Estudiante multimedia · Creadora</p></article>
+            <article className="cac-credit-person"><h3>Samuel</h3><p>Estudiante multimedia · Creador</p></article>
+          </div>
         </div>
       </section>
     </>
