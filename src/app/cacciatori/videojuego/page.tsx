@@ -1,98 +1,138 @@
 import Image from "next/image";
-import type { CSSProperties } from "react";
-import { CacciatoriAction } from "@/components/cacciatori/CacciatoriAction";
-import { cacciatoriAsset } from "@/components/cacciatori/assets";
 
-const mechanics = [
-  { number: "01 / DIAGRAMA", title: "Mecánicas", copy: "Explora el espacio, lee las señales y reúne pistas sin perder de vista lo que se mueve alrededor.", hue: "0deg" },
-  { number: "02 / DIAGRAMA", title: "Experiencia", copy: "La tensión surge del recorrido: el silencio, los encuadres y las decisiones construyen la inquietud.", hue: "-8deg" },
-  { number: "03 / DIAGRAMA", title: "Características", copy: "Una experiencia narrativa en un escenario cotidiano que revela progresivamente su lado más extraño.", hue: "8deg" },
-  { number: "04 / DIAGRAMA", title: "Señales", copy: "Observa detalles del entorno. Cada elemento visual puede funcionar como una pista para leer el lugar.", hue: "-15deg" },
+type InfoRow = { name: string; description: string };
+
+const mechanics: InfoRow[] = [
+  { name: "Desplazamiento", description: "Caminar, correr y agacharse para recorrer el restaurante, controlar el ruido y encontrar rutas seguras." },
+  { name: "Cámara", description: "Usar el flash fotográfico y el filtro UV para revelar detalles, rastros y presencias que no se perciben a simple vista." },
+  { name: "Inspección de objetos", description: "Examinar objetos del entorno para reconstruir lo ocurrido y encontrar información útil." },
+  { name: "Interacción con el entorno", description: "Abrir, activar y manipular elementos del restaurante para avanzar y descubrir sus secretos." },
 ];
+
+const dynamics: InfoRow[] = [
+  { name: "Estrategia de movimiento sigiloso", description: "Elegir cuándo moverse, esconderse o avanzar con cautela para evitar ser detectado." },
+  { name: "Gestión de riesgo", description: "Cada exploración puede acercar al jugador a una pista o a una amenaza." },
+  { name: "Recolección de información", description: "Conectar evidencias visuales y objetos para comprender la historia del lugar." },
+  { name: "Estrategia de escape", description: "Leer el espacio y tomar decisiones rápidas cuando la persecución comienza." },
+  { name: "Análisis y resolución de problemas", description: "Interpretar hallazgos y resolver situaciones para desbloquear el recorrido." },
+  { name: "Gestión de recursos", description: "Administrar las oportunidades de investigación y las herramientas disponibles." },
+];
+
+const aesthetics: InfoRow[] = [
+  { name: "Distorsión de pantalla", description: "Claustrofobia: la imagen se altera para transmitir encierro y pérdida de control." },
+  { name: "Diseño sonoro", description: "Estrés: silencios, ruidos y señales auditivas mantienen la amenaza presente." },
+  { name: "Cámara e investigación", description: "Análisis forense: observar se convierte en la principal herramienta de supervivencia." },
+  { name: "Recolección de información", description: "Descubrimiento: cada hallazgo amplía la lectura del restaurante y su pasado." },
+  { name: "Administración de recursos", description: "Desafío: avanzar exige decidir qué investigar y cuándo hacerlo." },
+  { name: "La Cautiva", description: "Compañerismo: su presencia introduce una relación distinta dentro de la amenaza." },
+  { name: "Decisiones y tácticas", description: "Experiencia: el jugador aprende a leer el lugar y a reaccionar a sus reglas." },
+  { name: "Protagonista en posición de presa", description: "Sumisión: Brayan enfrenta una fuerza que controla el espacio y dicta el ritmo." },
+];
+
+function InfoTable({ rows }: { rows: InfoRow[] }) {
+  return (
+    <div className="cac-info-table">
+      {rows.map((row, index) => (
+        <div className="cac-info-table__row" key={row.name}>
+          <div className="cac-info-table__index">{String(index + 1).padStart(2, "0")}</div>
+          <h3>{row.name}</h3>
+          <p>{row.description}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 const characters = [
-  { image: "character-captain.webp", name: "Il Capitano", number: "ID_01 / CAPITANO", copy: "El chef. Las manos conocen la textura de la piedra y la sangre." },
-  { image: "character-countess.webp", name: "La Contessa", number: "ID_02 / CONTESSA", copy: "Una presencia enigmática cuya historia todavía guarda zonas sin revelar." },
-  { image: "character-waiter.webp", name: "Il Cameriere", number: "ID_03 / CAMERIERE", copy: "El silencio también trabaja en la sala. A veces, es quien más observa." },
+  { image: "/ProtaVideojuego.png", name: "Brayan", role: "Protagonista", copy: "Un joven estudiante de criminalística que se infiltra en el restaurante abandonado para investigar lo que ocurrió allí. Su mirada forense es también su única forma de orientarse." },
+  { image: "/ChefVideojuego.png", name: "Cacciatori", role: "Antagonista principal", copy: "La presencia que domina el restaurante. Persigue a Brayan, altera su percepción y convierte cada pasillo en una amenaza." },
+  { image: "/CautivaVideojuego.png", name: "La Cautiva", role: "Antagonista secundaria", copy: "Otro de los personajes del videojuego. Su aparición añade una dimensión impredecible al recorrido y a la tensión de la historia." },
+];
+
+const scenarios = [
+  { image: "/CapRestaurante.png", name: "Restaurante Cacciatori", copy: "El escenario principal: un restaurante abandonado donde los vestigios de la antigua actividad culinaria conviven con señales de violencia y abandono." },
+  { image: "/CapSotano.png", name: "Sótano oculto", copy: "Un espacio escondido bajo el restaurante. Sus pasillos profundizan el misterio y obligan a Brayan a enfrentar lo que la superficie intenta ocultar." },
 ];
 
 export default function VideojuegoPage() {
   return (
     <>
-      <section className="cac-product-hero">
-        <div className="cac-container">
-          <div className="cac-product-hero__top"><div><p className="cac-eyebrow">02 / TRÁILER</p><h1 className="cac-h2">Vista previa del videojuego</h1></div><a className="cac-button" href="#mecanicas">EXPLORAR ↓</a></div>
-          <div className="cac-media-layout">
-            <div className="cac-media-frame">
-              <Image src={cacciatoriAsset("game-trailer.webp")} alt="Captura de referencia del escenario del videojuego Cacciatori" width={1055} height={592} priority sizes="(max-width:760px) 100vw, 68vw" />
-              <span className="cac-media-frame__rec">REC · MATERIAL VISUAL</span>
-              <div className="cac-media-frame__play"><CacciatoriAction label="Reproducir tráiler" variant="play" title="Tráiler del videojuego" image="game-trailer.webp" description="La vista previa representa el tráiler; el vídeo original aún no está conectado. Este botón queda preparado para enlazar el vídeo oficial cuando esté disponible." /></div>
-            </div>
-            <aside className="cac-advance">
-              <p className="cac-eyebrow">TRÁILER PRINCIPAL</p><h2>Avance editorial</h2>
-              <dl>
-                <div className="cac-spec"><dt>Formato</dt><dd>Vídeo / 16:9</dd></div>
-                <div className="cac-spec"><dt>Duración</dt><dd>Por confirmar</dd></div>
-                <div className="cac-spec"><dt>Estado</dt><dd>Recurso pendiente</dd></div>
-                <div className="cac-spec"><dt>Canal</dt><dd>Enlace por configurar</dd></div>
-              </dl>
-              <p className="cac-advance__summary">Vista previa del tráiler principal, concebida para abrir la narrativa del juego y presentar el tono visual del proyecto.</p>
-              <CacciatoriAction label="VER TRÁILER" title="Tráiler pendiente" image="game-trailer.webp" description="Agrega el archivo MP4/WebM o el enlace oficial del vídeo para activar la reproducción real. No se ha inventado una URL externa." />
-            </aside>
+      <section className="cac-game-hero">
+        <Image className="cac-game-hero__image" src="/CapVideojuego.png" alt="Pantalla de inicio del videojuego Cacciatori" fill priority sizes="100vw" />
+        <div className="cac-game-hero__veil" />
+        <div className="cac-container cac-game-hero__content">
+          <p className="cac-eyebrow">01 / PRODUCTO PRINCIPAL DEL UNIVERSO</p>
+          <h1 className="cac-h1">Videojuego<br />Cacciatori</h1>
+          <p className="cac-game-hero__claim">La investigación comienza cuando el lugar deja de estar vacío.</p>
+          <a className="cac-button" href="#ficha">CONOCER EL JUEGO ↓</a>
+        </div>
+      </section>
+
+      <section className="cac-section" id="ficha">
+        <div className="cac-container cac-game-intro">
+          <div>
+            <p className="cac-eyebrow">02 / FICHA DEL PRODUCTO</p>
+            <h2 className="cac-h2">Una investigación<br />en la oscuridad</h2>
+          </div>
+          <div>
+            <p className="cac-intro">Cacciatori es un videojuego de terror psicológico en primera persona, construido con una estética low poly y una atmósfera de tensión constante.</p>
+            <p className="cac-body-copy">La historia sigue a Brayan, un joven estudiante de criminalística que se infiltra en un restaurante abandonado. Inspirado en la leyenda urbana colombiana <em>L&apos;Angolo Di Gigi</em>, el juego convierte la investigación en una experiencia de supervivencia: observar, interpretar y decidir cuándo escapar.</p>
+            <dl className="cac-game-facts">
+              <div><dt>Género</dt><dd>Terror psicológico</dd></div>
+              <div><dt>Perspectiva</dt><dd>Primera persona</dd></div>
+              <div><dt>Dirección artística</dt><dd>Estética low poly</dd></div>
+              <div><dt>Universo</dt><dd>Cacciatori · YOMI Studio</dd></div>
+            </dl>
           </div>
         </div>
       </section>
 
       <section className="cac-section" id="mecanicas">
         <div className="cac-container">
-          <div className="cac-section-head"><div><p className="cac-eyebrow">03 / EXPERIENCIA</p><h2 className="cac-h2">Mecánicas y flujo</h2></div><p className="cac-section-note">Señales · recorrido · observación</p></div>
-          <div className="cac-four-grid">
-            {mechanics.map((item) => <article className="cac-mechanic-card" key={item.title}>
-              <div className="cac-mechanic-card__art" style={{ "--skull-hue": item.hue } as CSSProperties}><Image src={cacciatoriAsset("game-skull.webp")} alt="Diagrama visual del videojuego" width={334} height={442} /><span>{item.number}</span></div>
-              <div className="cac-mechanic-card__body"><h3>{item.title}</h3><p>{item.copy}</p></div>
-            </article>)}
-          </div>
+          <div className="cac-section-head"><div><p className="cac-eyebrow">03 / SISTEMAS DE JUEGO</p><h2 className="cac-h2">Mecánicas</h2><p className="cac-intro">Las acciones concretas que permiten explorar, investigar y sobrevivir dentro del restaurante.</p></div><p className="cac-section-note">Acciones del jugador</p></div>
+          <InfoTable rows={mechanics} />
         </div>
       </section>
 
-      <section className="cac-section">
+      <section className="cac-section cac-section--dark">
         <div className="cac-container">
-          <div className="cac-section-head"><div><p className="cac-eyebrow">PERSONAJES</p><h2 className="cac-h2">Perfil de personaje</h2></div><p className="cac-section-note">Figuras del universo</p></div>
-          <div className="cac-character-grid">
+          <div className="cac-section-head"><div><p className="cac-eyebrow">04 / EXPERIENCIA</p><h2 className="cac-h2">Dinámicas</h2><p className="cac-intro">Las decisiones y comportamientos que transforman las mecánicas en una experiencia de tensión y descubrimiento.</p></div><p className="cac-section-note">Decisiones · riesgo · escape</p></div>
+          <InfoTable rows={dynamics} />
+        </div>
+      </section>
+
+      <section className="cac-section" id="personajes">
+        <div className="cac-container">
+          <div className="cac-section-head"><div><p className="cac-eyebrow">05 / PERSONAJES</p><h2 className="cac-h2">Tres presencias</h2><p className="cac-intro">Cada personaje ocupa una posición distinta dentro de la persecución y modifica la forma de leer el espacio.</p></div><p className="cac-section-note">Ficción · amenaza · vínculo</p></div>
+          <div className="cac-character-grid cac-game-character-grid">
             {characters.map((character) => <article className="cac-character" key={character.name}>
-              <div className="cac-character__portrait"><Image src={cacciatoriAsset(character.image)} alt={`Concepto visual de ${character.name}`} width={455} height={565} /></div>
-              <div className="cac-character__body"><p>{character.number}</p><h3>{character.name}</h3><p>{character.copy}</p></div>
+              <div className="cac-character__portrait"><Image src={character.image} alt={`Retrato de ${character.name}`} width={600} height={700} /></div>
+              <div className="cac-character__body"><p>{character.role}</p><h3>{character.name}</h3><p className="cac-character__description">{character.copy}</p></div>
             </article>)}
           </div>
         </div>
       </section>
 
       <section className="cac-section">
-        <div className="cac-container cac-process">
-          <div className="cac-process__image"><Image src={cacciatoriAsset("game-symbol.webp")} alt="Símbolo gráfico del universo Cacciatori" width={470} height={580} /></div>
-          <div className="cac-process__copy"><p className="cac-eyebrow">DESARROLLO</p><h3>Proceso creativo</h3><p>La documentación del desarrollo reúne decisiones de arte conceptual, diseño de escenarios, sistemas de juego y construcción narrativa.</p><ul><li>Arte conceptual / assets</li><li>Prototipado y pruebas de experiencia</li><li>Diseño narrativo y ambientación</li></ul><CacciatoriAction label="CONSULTAR MATERIAL" title="Material de desarrollo" description="Esta sección está lista para conectar una carpeta, PDF o repositorio de materiales." /></div>
-        </div>
-      </section>
-
-      <section className="cac-section">
-        <div className="cac-container cac-access">
-          <div className="cac-access__screen"><div className="cac-access__overlay"><p className="cac-eyebrow">06 / ACCESO</p><h3>Acceso al videojuego</h3><p>Consulta los datos técnicos y la información de acceso cuando esté publicado el ejecutable o la demo oficial.</p><CacciatoriAction label="DESCARGAR / ACCEDER" variant="red" title="Acceso aún no configurado" description="El material compartido contiene capturas del prototipo, pero no incluye un instalador, demo descargable ni URL oficial del videojuego. Añade el enlace cuando esté listo." /></div></div>
-          <aside className="cac-access__specs"><h3>Datos técnicos</h3><dl>
-            <div className="cac-spec"><dt>Plataforma</dt><dd>Por confirmar</dd></div>
-            <div className="cac-spec"><dt>Formato</dt><dd>Demo / ejecutable</dd></div>
-            <div className="cac-spec"><dt>Estado</dt><dd>En actualización</dd></div>
-            <div className="cac-spec"><dt>Distribución</dt><dd>Enlace oficial</dd></div>
-          </dl></aside>
-        </div>
-      </section>
-
-      <section className="cac-section">
         <div className="cac-container">
-          <div className="cac-section-head"><div><p className="cac-eyebrow">07 / CRÉDITOS</p><h2 className="cac-h2">Los culpables</h2></div><p className="cac-section-note">Personas que participaron</p></div>
-          <div className="cac-credit-people">
-            <article className="cac-credit-person"><div className="cac-credit-person__portrait">A</div><h3>Dirección creativa</h3><p>Identidad visual · universo</p></article>
-            <article className="cac-credit-person"><div className="cac-credit-person__portrait">N</div><h3>Narrativa y diseño</h3><p>Historia · personajes · flujo</p></article>
-            <article className="cac-credit-person"><div className="cac-credit-person__portrait">D</div><h3>Desarrollo interactivo</h3><p>Prototipo · experiencia</p></article>
+          <div className="cac-section-head"><div><p className="cac-eyebrow">06 / ESPACIOS</p><h2 className="cac-h2">El lugar de la amenaza</h2><p className="cac-intro">Dos escenarios conectados por una misma pregunta: ¿qué ocurrió realmente en Cacciatori?</p></div><p className="cac-section-note">Restaurante · sótano</p></div>
+          <div className="cac-scenario-grid">
+            {scenarios.map((scenario) => <article className="cac-scenario" key={scenario.name}><div className="cac-scenario__image"><Image src={scenario.image} alt={`Escenario: ${scenario.name}`} width={1200} height={700} /></div><div className="cac-scenario__body"><p className="cac-eyebrow">ESCENARIO</p><h3>{scenario.name}</h3><p>{scenario.copy}</p></div></article>)}
           </div>
+        </div>
+      </section>
+
+      <section className="cac-section cac-section--dark">
+        <div className="cac-container">
+          <div className="cac-section-head"><div><p className="cac-eyebrow">07 / DIRECCIÓN EMOCIONAL</p><h2 className="cac-h2">Estéticas</h2><p className="cac-intro">Las decisiones visuales, sonoras y narrativas que definen cómo se siente jugar Cacciatori.</p></div><p className="cac-section-note">Atmósfera · significado</p></div>
+          <InfoTable rows={aesthetics} />
+        </div>
+      </section>
+
+      <section className="cac-section">
+        <div className="cac-container cac-game-access">
+          <div><p className="cac-eyebrow">08 / ESTADO DEL PRODUCTO</p><h2 className="cac-h2">Una experiencia<br />en construcción</h2></div>
+          <div><p className="cac-intro">El videojuego Cacciatori es el producto principal del universo y continúa desarrollándose como una experiencia de terror psicológico, investigación y supervivencia.</p><p className="cac-body-copy">La página se actualizará con la demo, plataforma y enlace de acceso oficial cuando estén disponibles.</p></div>
         </div>
       </section>
     </>

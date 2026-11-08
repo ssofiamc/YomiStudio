@@ -120,6 +120,35 @@
 .cac-credit h3 { margin: 0 0 7px; font-family: Georgia, 'Times New Roman', serif; font-size: 20px; font-weight: 400; text-transform: uppercase; }
 .cac-credit p { margin: 0; color: #777168; font-family: 'Courier New', monospace; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
 
+/* Videojuego Cacciatori */
+.cac-game-hero { position: relative; min-height: min(820px, calc(100vh - 72px)); display: flex; align-items: flex-end; overflow: hidden; border-bottom: 1px solid var(--cac-line); isolation: isolate; }
+.cac-game-hero__image { z-index: -2; object-fit: cover; object-position: center; filter: saturate(.8); }
+.cac-game-hero__veil { position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.94), rgba(0,0,0,.35) 70%), linear-gradient(0deg, #050505, transparent 46%); }
+.cac-game-hero__content { padding: clamp(70px, 11vw, 150px) 0 90px; }
+.cac-game-hero__content .cac-h1 { margin: 18px 0 24px; }
+.cac-game-hero__claim { max-width: 560px; margin: 0 0 30px; color: #e8dfd3; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(17px, 2vw, 25px); font-style: italic; line-height: 1.5; }
+.cac-game-intro, .cac-game-access { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, .9fr); gap: clamp(35px, 8vw, 150px); align-items: start; }
+.cac-body-copy { color: #9c958b; line-height: 1.9; }
+.cac-game-facts { margin: 32px 0 0; border-top: 1px solid var(--cac-line); }
+.cac-game-facts div { display: flex; justify-content: space-between; gap: 20px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+.cac-game-facts dt { color: var(--cac-yellow); font-family: 'Courier New', monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+.cac-game-facts dd { margin: 0; color: #d3ccc2; text-align: right; }
+.cac-info-table { border-top: 1px solid var(--cac-line); }
+.cac-info-table__row { display: grid; grid-template-columns: 55px minmax(220px, .65fr) minmax(0, 1.35fr); gap: 20px; align-items: baseline; padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,.11); }
+.cac-info-table__index { color: var(--cac-yellow); font-family: 'Courier New', monospace; font-size: 10px; letter-spacing: .12em; }
+.cac-info-table h3 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(19px, 2vw, 27px); font-weight: 400; text-transform: uppercase; }
+.cac-info-table p { margin: 0; color: #9b9388; line-height: 1.7; }
+.cac-section--dark { background: #0b0909; }
+.cac-game-character-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cac-character__description { text-transform: none !important; font-family: inherit !important; font-size: 13px !important; letter-spacing: 0 !important; line-height: 1.7 !important; }
+.cac-scenario-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.cac-scenario { border: 1px solid rgba(214,34,52,.22); background: #080807; }
+.cac-scenario__image { aspect-ratio: 16 / 9; overflow: hidden; border-bottom: 1px solid var(--cac-line); }
+.cac-scenario__image img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.cac-scenario__body { padding: 22px; }
+.cac-scenario__body h3 { margin: 10px 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(24px, 3vw, 36px); font-weight: 400; text-transform: uppercase; }
+.cac-scenario__body p:last-child { margin: 0; color: #9b9388; line-height: 1.75; }
+
 /* Plantillas compartidas de producto */
 .cac-product-hero { padding: clamp(55px, 7vw, 95px) 0 72px; border-bottom: 1px solid rgba(255,255,255,.12); }
 .cac-product-hero__top { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 30px; }
@@ -252,6 +281,7 @@
   .cac-header__edition { display: none; }
   .cac-four-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .cac-rules-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .cac-game-hero { min-height: 700px; }
 }
 @media (max-width: 760px) {
   .cac-header { gap: 15px; }
@@ -266,7 +296,7 @@
   .cac-hero__quote { max-width: 560px; }
   .cac-section-head { display: block; }
   .cac-section-note { margin-top: 18px; text-align: left; }
-  .cac-recipe, .cac-evolution, .cac-plates, .cac-media-layout, .cac-process, .cac-access, .cac-comic-details, .cac-buy-panel, .cac-twine-layout { grid-template-columns: 1fr; }
+  .cac-recipe, .cac-evolution, .cac-plates, .cac-media-layout, .cac-process, .cac-access, .cac-comic-details, .cac-buy-panel, .cac-twine-layout, .cac-game-intro, .cac-game-access { grid-template-columns: 1fr; }
   .cac-recipe__wordmark { font-size: clamp(42px, 14vw, 115px); }
   .cac-evolution__art, .cac-evolution__art img { min-height: 320px; }
   .cac-product-grid { grid-template-columns: 1fr; }
@@ -279,9 +309,13 @@
   .cac-media-frame { min-height: 220px; }
   .cac-advance { border-left: 0; border-top: 1px solid rgba(255,255,255,.1); padding: 24px 0 0; }
   .cac-character-grid, .cac-pawns-grid { grid-template-columns: 1fr; }
+  .cac-game-character-grid, .cac-scenario-grid { grid-template-columns: 1fr; }
   .cac-character { display: grid; grid-template-columns: minmax(110px,.8fr) minmax(0,1.2fr); align-items: stretch; }
   .cac-character__portrait { height: 230px; }
   .cac-character__body { align-self: center; padding: 18px; }
+  .cac-info-table__row { grid-template-columns: 38px 1fr; gap: 10px 14px; }
+  .cac-info-table__row p { grid-column: 2; }
+  .cac-game-hero__content { padding-bottom: 65px; }
   .cac-rules-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .cac-twine-hero__head { align-items: flex-start; flex-direction: column; }
   .cac-twine-stage { min-height: 0; }
