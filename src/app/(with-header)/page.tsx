@@ -24,10 +24,10 @@ const team = [
   },
   {
     name: "Samuel",
-    image: `${basePath}/SamuelTemp.png`,
+    image: `${basePath}/SamuelPic.jpeg`,
     role: "Codirector",
     description: "Estudiante de Ingeniería en Multimedia con habilidad en el modelado 3D",
-    behance: "#equipo",
+    behance: "https://www.behance.net/samuelriscane",
   },
 ];
 export default function Page() {
