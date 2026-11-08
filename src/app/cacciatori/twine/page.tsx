@@ -6,7 +6,7 @@ export default function TwinePage() {
       <section className="cac-twine-hero">
         <div className="cac-container">
           <div className="cac-twine-hero__head">
-            <div><p className="cac-eyebrow">03 / PRODUCTO DEL UNIVERSO</p><h1 className="cac-glitch">Twine</h1></div>
+            <div><p className="cac-eyebrow">03 / PRODUCTO DEL UNIVERSO</p><h1 className="cac-h2">Twine</h1></div>
           </div>
           <div className="cac-twine-embed">
             <iframe
