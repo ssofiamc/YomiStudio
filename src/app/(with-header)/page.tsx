@@ -22,6 +22,13 @@ const team = [
     description: "Estudiante de Ingeniería en Multimedia con habilidad en el diseño",
     behance: "https://www.behance.net/sasomc",
   },
+  {
+    name: "Samuel",
+    image: `${basePath}/SamuelTemp.png`,
+    role: "Codirector",
+    description: "Estudiante de Ingeniería en Multimedia con habilidad en el modelado 3D",
+    behance: "#equipo",
+  },
 ];
 export default function Page() {
   return <><section className="relative border-b-2 border-black md:min-h-[90vh]">

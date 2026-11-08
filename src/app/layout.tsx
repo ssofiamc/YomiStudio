@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   title: "Yomi Studio",
   description: "Historias que se pueden tocar, leer, jugar y recorrer.",
   icons: {
-    icon: [{ url: `${basePath}/yomi-studio-blanco.png`, type: "image/png" }],
-    shortcut: [`${basePath}/yomi-studio-blanco.png`],
+    icon: [{ url: `${basePath}/yomi-studio-logo-blanco.png`, type: "image/png" }],
+    shortcut: [`${basePath}/yomi-studio-logo-blanco.png`],
   },
 };
 
