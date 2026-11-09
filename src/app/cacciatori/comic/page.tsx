@@ -62,7 +62,7 @@ export default function ComicPage() {
         </div>
       </section>
 
-      <section className="cac-section cac-section--dark">
+      <section className="cac-section cac-section--dark cac-game-data-section">
         <div className="cac-container">
           <div className="cac-section-head"><div><p className="cac-eyebrow">03 / SINOPSIS</p><h2 className="cac-h2">El secreto detrás<br />de la fachada</h2><p className="cac-intro">Una historia sobre la atracción por lo prohibido y el precio de creer que se puede comprender a un monstruo.</p></div></div>
           <div className="cac-synopsis">
