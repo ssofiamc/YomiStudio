@@ -4,7 +4,7 @@ import { CacciatoriShell } from "@/components/cacciatori/CacciatoriShell";
 import "./cacciatori.css";
 
 export const metadata: Metadata = {
-  title: "Cacciatori — Universo transmedia | YOMI Studio",
+  title: "Universo Cacciatori | Yomi Studio",
   description: "Explora el universo Cacciatori: una historia entre la perfección de la culinaria italiana y la brutalidad humana.",
 };
 

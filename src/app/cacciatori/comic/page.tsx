@@ -64,7 +64,7 @@ export default function ComicPage() {
 
       <section className="cac-section cac-section--dark">
         <div className="cac-container">
-          <div className="cac-section-head"><div><p className="cac-eyebrow">03 / SINOPSIS</p><h2 className="cac-h2">El secreto detrás<br />de la fachada</h2><p className="cac-intro">Una historia sobre la atracción por lo prohibido y el precio de creer que se puede comprender a un monstruo.</p></div><p className="cac-section-note">Sin revelar el desenlace</p></div>
+          <div className="cac-section-head"><div><p className="cac-eyebrow">03 / SINOPSIS</p><h2 className="cac-h2">El secreto detrás<br />de la fachada</h2><p className="cac-intro">Una historia sobre la atracción por lo prohibido y el precio de creer que se puede comprender a un monstruo.</p></div></div>
           <div className="cac-synopsis">
             <p>Natalia visita el restaurante CACCIATORI, fascinada por los rumores de desapariciones y asesinatos relacionados con su chef. Cuando descubre una parte de la verdad, su reacción no es escapar: decide acercarse, observar y aceptar aquello que los demás no se atreven a nombrar.</p>
             <p>La relación entre ambos crece bajo la mirada admirada del público, mientras Natalia empieza a preguntarse cuánto conoce realmente al hombre que ha elegido. Cuando una nueva revelación rompe el equilibrio, la pareja deberá enfrentarse a las consecuencias de una obsesión que ya no puede mantenerse bajo control.</p>
@@ -103,7 +103,7 @@ export default function ComicPage() {
       <section className="cac-section">
         <div className="cac-container">
           <div className="cac-section-head"><div><p className="cac-eyebrow">07 / AUTORÍA</p><h2 className="cac-h2">Los culpables</h2><p className="cac-intro">Ossessione es una obra creada dentro del universo Cacciatori.</p></div><p className="cac-section-note">Créditos del producto</p></div>
-          <div className="cac-credit-people"><article className="cac-credit-person"><h3>Arte e ilustración</h3><p>Personajes · escenarios · bocetos</p></article><article className="cac-credit-person"><h3>Guion y narrativa</h3><p>Relato · personajes · edición</p></article><article className="cac-credit-person"><h3>Edición y publicación</h3><p>Formato · colección</p></article></div>
+          <div className="cac-credit-people cac-game-authors"><article className="cac-credit-person"><h3>Santiago</h3><p>Estudiante de Ingeniería en Multimedia · Creador</p></article><article className="cac-credit-person"><h3>Sara</h3><p>Estudiante de Ingeniería en Multimedia · Creadora</p></article></div>
         </div>
       </section>
     </>
