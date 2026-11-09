@@ -1,79 +1,110 @@
 import Image from "next/image";
-import Link from "next/link";
 import { CacciatoriAction } from "@/components/cacciatori/CacciatoriAction";
-import { cacciatoriAsset } from "@/components/cacciatori/assets";
+import { publicAsset } from "@/components/cacciatori/assets";
+
+const characters = [
+  {
+    image: "Natalia.png",
+    name: "Natalia",
+    role: "PERSONAJE_01 / LA OBSERVADORA",
+    copy: "Una joven bogotana de veinticuatro años, nacida en una familia adinerada y acostumbrada a una vida de privilegios, viajes y experiencias. Su curiosidad por los rumores del restaurante la lleva a acercarse a Cacciatori y a mirar de frente aquello que los demás prefieren ignorar.",
+  },
+  {
+    image: "Cacciatori.png",
+    name: "Cacciatori",
+    role: "PERSONAJE_02 / EL CHEF",
+    copy: "Un chef veneciano que construyó en Bogotá una imagen respetable alrededor de su restaurante. Tras esa fachada existe una relación inquietante con el control, el silencio y los secretos que guarda el sótano.",
+  },
+];
+
+const scenarios = [
+  { image: "Apartamento1.png", name: "Apartamento de Natalia" },
+  { image: "Apartamento2.png", name: "Apartamento de Natalia" },
+  { image: "Sotano1.png", name: "Sótano del restaurante" },
+  { image: "Sotano2.png", name: "Sótano del restaurante" },
+  { image: "RestauranteExterior.png", name: "Exterior del restaurante Cacciatori" },
+  { image: "RestauranteInterior.png", name: "Interior del restaurante Cacciatori" },
+];
 
 export default function ComicPage() {
   return (
     <>
-      <section className="cac-product-hero">
-        <div className="cac-container cac-comic-details">
-          <div>
-            <p className="cac-eyebrow">01 / BIBLIOTECA PRINCIPAL</p>
-            <h1 className="cac-h2" style={{ marginTop: 15 }}>Cacciatori</h1>
-            <p className="cac-intro">Un expediente ilustrado sobre obsesión, hambre y secretos que no deberían llegar a la mesa.</p>
-            <div className="cac-comic-details__data">
-              <dt>Género</dt><dd>Terror · misterio</dd>
-              <dt>Páginas</dt><dd>11 pp. / dato del prototipo</dd>
-              <dt>Lectura</dt><dd>Vista editorial en preparación</dd>
-            </div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 28 }}><CacciatoriAction label="LEER AHORA" variant="light" title="Lectura del cómic" image="comic-detail-cover.webp" description="Las capturas muestran el diseño editorial y las secciones del cómic, pero el ZIP no incluye las páginas completas en un PDF o lector. Este acceso queda preparado para conectar el material de lectura definitivo." /><a className="cac-button" href="#datos-obra">DATOS DE LA OBRA ↓</a></div>
+      <section className="cac-comic-hero">
+        <Image className="cac-comic-hero__image" src={publicAsset("CapComic.png")} alt="Portada del cómic Ossessione" fill priority sizes="100vw" />
+        <div className="cac-comic-hero__veil" />
+        <div className="cac-container cac-comic-hero__content">
+          <p className="cac-eyebrow">01 / PRODUCTO DEL UNIVERSO CACCIATORI</p>
+          <h1 className="cac-h1">Ossessione</h1>
+          <p className="cac-game-hero__claim">Una historia de terror psicológico sobre deseo, violencia y secretos que nunca permanecen enterrados.</p>
+          <div className="cac-game-hero__actions">
+            <CacciatoriAction label="LEER HISTORIA" variant="light" title="Lectura de Ossessione" image="comic-detail-cover.webp" description="El enlace de lectura se incorporará cuando esté disponible." />
+            <a className="cac-button" href="#ficha-ossessione">CONOCER LA OBRA ↓</a>
           </div>
-          <div><Image className="cac-comic-details__cover" src={cacciatoriAsset("comic-detail-cover.webp")} alt="Portada de referencia del expediente Ossessione" width={685} height={830} priority sizes="(max-width:760px) 100vw, 43vw" /></div>
         </div>
       </section>
 
-      <section className="cac-section" id="datos-obra">
-        <div className="cac-container cac-comic-details">
+      <section className="cac-section" id="ficha-ossessione">
+        <div className="cac-container cac-game-intro">
           <div>
-            <p className="cac-eyebrow">02 / FICHA</p>
-            <h2 className="cac-h2">Datos de la obra</h2>
-            <p className="cac-intro">Una edición pensada como pieza de colección, con una identidad gráfica que mantiene la tensión entre negro, blanco y escarlata.</p>
-            <dl className="cac-comic-details__data">
-              <dt>Formato</dt><dd>Digital / edición física coleccionista</dd>
-              <dt>Color</dt><dd>Blanco y negro + tintas escarlata</dd>
-              <dt>Tamaño</dt><dd>A5 / 210 × 148 mm (referencia de prototipo)</dd>
-              <dt>Páginas</dt><dd>11 pp. (referencia de prototipo)</dd>
-              <dt>Edición</dt><dd>Material definitivo por confirmar</dd>
+            <p className="cac-eyebrow">02 / FICHA DEL PRODUCTO</p>
+            <h2 className="cac-h2">Una obsesión<br />a puerta cerrada</h2>
+          </div>
+          <div>
+            <p className="cac-intro">Ossessione es un cómic de terror psicológico y horror criminal que explora la fascinación por la violencia y los límites de una relación construida sobre secretos.</p>
+            <p className="cac-body-copy">Natalia, una joven adinerada y emocionalmente aislada, llega al restaurante Cacciatori atraída por sus rumores. Allí conoce al chef y descubre que detrás de su imagen pública existe una verdad mucho más oscura. En lugar de huir, se acerca cada vez más a él, hasta quedar atrapada en una relación donde el amor, la admiración y el peligro se confunden.</p>
+            <dl className="cac-game-facts">
+              <div><dt>Nombre</dt><dd>Ossessione</dd></div>
+              <div><dt>Género</dt><dd>Terror psicológico · horror criminal</dd></div>
+              <div><dt>Protagonista</dt><dd>Natalia</dd></div>
+              <div><dt>Escenario</dt><dd>Bogotá · restaurante Cacciatori</dd></div>
             </dl>
           </div>
-          <div><Image className="cac-comic-details__cover" src={cacciatoriAsset("comic-detail-cover.webp")} alt="Arte de portada con cuchillo y cadena" width={685} height={830} sizes="(max-width:760px) 100vw, 43vw" /></div>
         </div>
       </section>
 
-      <section className="cac-section">
+      <section className="cac-section cac-section--dark">
         <div className="cac-container">
-          <div className="cac-section-head"><div><p className="cac-eyebrow">PERSONAJES</p><h2 className="cac-h2">El reparto del silencio</h2></div><p className="cac-section-note">Personajes / ficción</p></div>
-          <div className="cac-character-grid" style={{ gridTemplateColumns: "repeat(2,minmax(0,1fr))" }}>
-            <article className="cac-character"><div className="cac-character__portrait"><Image src={cacciatoriAsset("comic-vincenzo.webp")} alt="Ilustración de Vincenzo" width={495} height={625} /></div><div className="cac-character__body"><p>PERSONAJE_01 / VINCENZO</p><h3>Vincenzo</h3><p>El restaurador. Sus manos conocen la textura de la piedra y la sangre.</p></div></article>
-            <article className="cac-character"><div className="cac-character__portrait"><Image src={cacciatoriAsset("comic-carlo.webp")} alt="Ilustración de Carlo" width={455} height={625} /></div><div className="cac-character__body"><p>PERSONAJE_02 / CARLO</p><h3>Carlo</h3><p>El silencio. Un pasajero enterrado bajo los cimientos del restaurante.</p></div></article>
+          <div className="cac-section-head"><div><p className="cac-eyebrow">03 / SINOPSIS</p><h2 className="cac-h2">El secreto detrás<br />de la fachada</h2><p className="cac-intro">Una historia sobre la atracción por lo prohibido y el precio de creer que se puede comprender a un monstruo.</p></div><p className="cac-section-note">Sin revelar el desenlace</p></div>
+          <div className="cac-synopsis">
+            <p>Natalia visita el restaurante CACCIATORI, fascinada por los rumores de desapariciones y asesinatos relacionados con su chef. Cuando descubre una parte de la verdad, su reacción no es escapar: decide acercarse, observar y aceptar aquello que los demás no se atreven a nombrar.</p>
+            <p>La relación entre ambos crece bajo la mirada admirada del público, mientras Natalia empieza a preguntarse cuánto conoce realmente al hombre que ha elegido. Cuando una nueva revelación rompe el equilibrio, la pareja deberá enfrentarse a las consecuencias de una obsesión que ya no puede mantenerse bajo control.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="cac-section" id="personajes-ossessione">
+        <div className="cac-container">
+          <div className="cac-section-head"><div><p className="cac-eyebrow">04 / PERSONAJES</p><h2 className="cac-h2">Los rostros de la obsesión</h2><p className="cac-intro">Conoce a los personajes centrales sin descubrir todavía todo lo que esconden.</p></div><p className="cac-section-note">Bocetos · identidad · conflicto</p></div>
+          <div className="cac-character-grid cac-comic-character-grid">
+            {characters.map((character) => <article className="cac-character" key={character.name}>
+              <div className="cac-comic-sketch"><Image src={publicAsset(character.image)} alt={`Bocetos de ${character.name}`} width={1000} height={900} /></div>
+              <div className="cac-character__body"><p>{character.role}</p><h3>{character.name}</h3><p className="cac-character__description">{character.copy}</p></div>
+            </article>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="cac-section cac-section--dark">
+        <div className="cac-container">
+          <div className="cac-section-head"><div><p className="cac-eyebrow">05 / ESCENARIOS</p><h2 className="cac-h2">Los espacios del secreto</h2><p className="cac-intro">Los lugares donde la imagen pública y la verdad oculta se encuentran.</p></div><p className="cac-section-note">Bocetos de ambientación</p></div>
+          <div className="cac-comic-scenarios">
+            {scenarios.map((scenario) => <figure className="cac-comic-scenario" key={scenario.image}><div className="cac-comic-sketch"><Image src={publicAsset(scenario.image)} alt={`Boceto del ${scenario.name}`} width={1000} height={800} /></div><figcaption>{scenario.name}</figcaption></figure>)}
           </div>
         </div>
       </section>
 
       <section className="cac-section">
         <div className="cac-container">
-          <div className="cac-section-head"><div><p className="cac-eyebrow">04 / ARTBOOK</p><h2 className="cac-h2">Gabinete de curiosidades</h2><p className="cac-intro">Explora el origen de la pesadilla, del primer trazo al color final.</p></div></div>
-          <div className="cac-art-grid">
-            <article className="cac-art-card"><Image src={cacciatoriAsset("comic-scenarios.webp")} alt="Referencias visuales de escenarios" width={745} height={685} /><div className="cac-art-card__body"><h3>Escenarios</h3><p>Restaurante, espacios interiores y lugares que convierten la rutina en una atmósfera inquietante.</p></div></article>
-            <article className="cac-art-card"><Image src={cacciatoriAsset("comic-sketches.webp")} alt="Pruebas de arte y bocetos" width={440} height={685} /><div className="cac-art-card__body"><h3>Pruebas de arte</h3><p>Variaciones de personaje, siluetas y decisiones visuales de la obra.</p></div></article>
-            <article className="cac-art-card"><div className="cac-art-card__body"><p className="cac-eyebrow">PROCESO CREATIVO</p><h3>La cocina detrás de la historia</h3><p>Cada panel es una decisión. Una combinación de encuadre, sombra y trazo que construye el tono del relato.</p><p style={{ marginTop: 22 }}>ARTE CONCEPTUAL</p></div></article>
-          </div>
+          <div className="cac-section-head"><div><p className="cac-eyebrow">06 / LECTURA</p><h2 className="cac-h2">Entra al expediente</h2><p className="cac-intro">La historia completa de Ossessione estará disponible para lectura cuando se incorpore el enlace definitivo.</p></div></div>
+          <div className="cac-comic-read-panel"><p>Descubre la relación entre Natalia y Cacciatori, sus secretos y la conexión que este relato establece con el resto del universo.</p><CacciatoriAction label="LEER HISTORIA" variant="red" title="Lectura próximamente" description="El botón está preparado para enlazar el cómic completo cuando se publique el lector o el archivo definitivo." /></div>
         </div>
       </section>
 
       <section className="cac-section">
         <div className="cac-container">
-          <div className="cac-section-head"><div><p className="cac-eyebrow">05 / ADQUISICIÓN</p><h2 className="cac-h2">Hazte con la obra</h2></div><p className="cac-section-note">Edición integral / coleccionista</p></div>
-          <div className="cac-buy-panel">
-            <div className="cac-buy-panel__cover"><Image src={cacciatoriAsset("comic-detail-cover.webp")} alt="Portada Ossessione" width={685} height={830} /></div>
-            <div className="cac-buy-panel__copy"><p className="cac-eyebrow">CACCIATORI / EDICIÓN INTEGRAL</p><h3>Una pieza para conservar el expediente.</h3><p>Incluye la obra completa, extras de arte y acceso a los materiales que acompañen la edición final. Los datos comerciales se incorporarán cuando estén confirmados.</p><div className="cac-buy-meta"><span>Formato por confirmar</span><span>Envío por definir</span><span>Contenido extra pendiente</span></div><div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}><CacciatoriAction label="CONSULTAR DISPONIBILIDAD" title="Edición en preparación" description="El prototipo presenta una compra de edición integral, pero no se proporcionaron precio, stock ni pasarela para tramitarla. Este botón evita simular una compra y queda listo para integrarse con el catálogo real." /><Link className="cac-button cac-button--light" href="/catalogo">CATÁLOGO YOMI ↗</Link></div></div>
-          </div>
+          <div className="cac-section-head"><div><p className="cac-eyebrow">07 / AUTORÍA</p><h2 className="cac-h2">Los culpables</h2><p className="cac-intro">Ossessione es una obra creada dentro del universo Cacciatori.</p></div><p className="cac-section-note">Créditos del producto</p></div>
+          <div className="cac-credit-people"><article className="cac-credit-person"><h3>Arte e ilustración</h3><p>Personajes · escenarios · bocetos</p></article><article className="cac-credit-person"><h3>Guion y narrativa</h3><p>Relato · personajes · edición</p></article><article className="cac-credit-person"><h3>Edición y publicación</h3><p>Formato · colección</p></article></div>
         </div>
-      </section>
-
-      <section className="cac-section">
-        <div className="cac-container"><div className="cac-section-head"><div><p className="cac-eyebrow">06 / CRÉDITOS</p><h2 className="cac-h2">Los culpables</h2></div><p className="cac-section-note">Personas que participaron</p></div><div className="cac-credit-people"><article className="cac-credit-person"><div className="cac-credit-person__portrait">A</div><h3>Arte e ilustración</h3><p>Escenarios · personajes</p></article><article className="cac-credit-person"><div className="cac-credit-person__portrait">N</div><h3>Guion y narrativa</h3><p>Relato · edición</p></article><article className="cac-credit-person"><div className="cac-credit-person__portrait">E</div><h3>Edición y publicación</h3><p>Formato · colección</p></article></div></div>
       </section>
     </>
   );

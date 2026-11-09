@@ -145,6 +145,22 @@
 .cac-game-board-hero__veil { position: absolute; z-index: 1; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.92), rgba(0,0,0,.32) 72%), linear-gradient(0deg, #050505, transparent 46%); }
 .cac-game-board-hero__content { position: relative; z-index: 2; padding: clamp(70px, 11vw, 150px) 0 90px; }
 .cac-game-board-hero__content .cac-h1 { margin: 18px 0 24px; }
+.cac-comic-hero { position: relative; min-height: min(820px, calc(100vh - 72px)); display: flex; align-items: flex-end; overflow: hidden; border-bottom: 1px solid var(--cac-line); isolation: isolate; }
+.cac-comic-hero__image { z-index: 0; object-fit: cover; object-position: center; filter: saturate(.75); }
+.cac-comic-hero__veil { position: absolute; z-index: 1; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.92), rgba(0,0,0,.3) 72%), linear-gradient(0deg, #050505, transparent 46%); }
+.cac-comic-hero__content { position: relative; z-index: 2; padding: clamp(70px, 11vw, 150px) 0 90px; }
+.cac-comic-hero__content .cac-h1 { margin: 18px 0 24px; }
+.cac-synopsis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; max-width: 1050px; }
+.cac-synopsis p { margin: 0; color: #b7aca3; font-family: Georgia, 'Times New Roman', serif; font-size: 17px; line-height: 1.9; }
+.cac-comic-character-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cac-comic-sketch { display: grid; place-items: center; min-height: 310px; padding: 18px; overflow: hidden; background: #fff; }
+.cac-comic-sketch img { display: block; width: 100%; height: 100%; max-height: 450px; object-fit: contain; }
+.cac-comic-scenarios { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.cac-comic-scenario { margin: 0; border: 1px solid rgba(214,34,52,.22); background: #080807; }
+.cac-comic-scenario .cac-comic-sketch { min-height: 240px; }
+.cac-comic-scenario figcaption { padding: 16px 18px; color: #eee7dc; font-family: Georgia, 'Times New Roman', serif; font-size: 19px; text-transform: uppercase; }
+.cac-comic-read-panel { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding: clamp(24px, 4vw, 45px); border: 1px solid var(--cac-line); background: #120a0a; }
+.cac-comic-read-panel p { max-width: 700px; margin: 0; color: #b8ada3; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.75; }
 .cac-experience-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .cac-experience-item { display: flex; align-items: baseline; gap: 16px; padding: 21px; border: 1px solid var(--cac-line); background: #120a0a; }
 .cac-experience-item span { color: var(--cac-yellow); font-family: 'Courier New', monospace; font-size: 10px; }
@@ -355,6 +371,8 @@
   .cac-twine-embed { min-height: 70vh; }
   .cac-twine-embed iframe { height: 70vh; min-height: 460px; }
   .cac-twine-embed__fallback { align-items: flex-start; flex-direction: column; }
+  .cac-synopsis, .cac-comic-character-grid, .cac-comic-scenarios { grid-template-columns: 1fr; }
+  .cac-comic-read-panel { align-items: flex-start; flex-direction: column; }
   .cac-art-grid { grid-template-columns: 1fr; }
   .cac-art-card { display: grid; grid-template-columns: minmax(105px,.8fr) minmax(0,1.2fr); }
   .cac-art-card img { height: 100%; min-height: 190px; }
